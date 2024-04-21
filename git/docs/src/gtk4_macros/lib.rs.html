@@ -557,7 +557,7 @@
 
 </span><span class="kw">mod </span><a href="attribute_parser.rs.html#3-372">attribute_parser</a>;
 <span class="attr">#[cfg(feature = <span class="string">"blueprint"</span>)]
-</span><span class="kw">mod </span><a href="blueprint.rs.html#3-31">blueprint</a>;
+</span><span class="kw">mod </span><a href="blueprint.rs.html#3-29">blueprint</a>;
 <span class="kw">mod </span><a href="composite_template_derive.rs.html#3-244">composite_template_derive</a>;
 <span class="kw">mod </span><a href="template_callbacks_attribute.rs.html#3-290">template_callbacks_attribute</a>;
 <span class="kw">mod </span><a href="util.rs.html#3-17">util</a>;
@@ -604,7 +604,7 @@
     <span class="kw">let </span>path = <a href="#42">path</a>.<a href="https://doc.rust-lang.org/nightly/std/path/struct.Path.html#method.to_string_lossy">to_string_lossy</a>().<a href="https://doc.rust-lang.org/nightly/alloc/string/trait.ToString.html#tymethod.to_string">to_string</a>();
 
     <span class="kw">let </span>template = <span class="kw">match </span><a href="https://doc.rust-lang.org/nightly/std/fs/fn.read_to_string.html">std::fs::read_to_string</a>(<span class="kw-2">&amp;</span><a href="#53">path</a>) {
-        <span class="prelude-val">Ok</span>(content) =&gt; <a href="blueprint.rs.html#10-31">blueprint::compile_blueprint</a>(<a href="#56">content</a>.<a href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html#method.as_bytes">as_bytes</a>()).<a href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html#method.unwrap">unwrap</a>(),
+        <span class="prelude-val">Ok</span>(content) =&gt; <a href="blueprint.rs.html#8-29">blueprint::compile_blueprint</a>(<a href="#56">content</a>.<a href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html#method.as_bytes">as_bytes</a>()).<a href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html#method.unwrap">unwrap</a>(),
         <span class="prelude-val">Err</span>(err) =&gt; {
             <span class="kw">return </span><a href="https://docs.rs/syn/2.0.57/syn/error/struct.Error.html#method.new">Error::new</a>(<a href="https://docs.rs/proc-macro2/1.0.80/proc_macro2/struct.Span.html#method.call_site">Span::call_site</a>(), <a href="#57">err</a>)
                 .<a href="https://docs.rs/syn/2.0.57/syn/error/struct.Error.html#method.into_compile_error">into_compile_error</a>()

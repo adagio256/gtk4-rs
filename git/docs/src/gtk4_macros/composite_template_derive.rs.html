@@ -369,7 +369,7 @@
         <span class="attr">#[cfg(feature = <span class="string">"blueprint"</span>)]
         </span><a href="attribute_parser.rs.html#120">TemplateSource::Blueprint</a>(blueprint) =&gt; {
             <span class="kw">let </span>template =
-                <a href="blueprint.rs.html#10-31">compile_blueprint</a>(<a href="#53">blueprint</a>.<a href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html#method.as_bytes">as_bytes</a>()).<a href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html#method.expect">expect</a>(<span class="string">"can't compile blueprint"</span>);
+                <a href="blueprint.rs.html#8-29">compile_blueprint</a>(<a href="#53">blueprint</a>.<a href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html#method.as_bytes">as_bytes</a>()).<a href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html#method.expect">expect</a>(<span class="string">"can't compile blueprint"</span>);
 
             <a class="macro" href="https://docs.rs/quote/1.0.35/quote/macro.quote.html">quote!</a> {
                 #crate_ident::subclass::widget::WidgetClassExt::set_template_static(

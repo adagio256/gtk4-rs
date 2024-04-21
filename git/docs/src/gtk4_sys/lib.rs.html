@@ -21150,7 +21150,7 @@
 <span class="kw">use </span>glib_sys <span class="kw">as </span>glib;
 <span class="kw">use </span>gobject_sys <span class="kw">as </span>gobject;
 <span class="kw">use </span>graphene_sys <span class="kw">as </span>graphene;
-<span class="kw">use </span><a href="../../gsk4_sys/index.html">gsk4_sys</a> <span class="kw">as </span>gsk;
+<span class="kw">use </span>gsk4_sys <span class="kw">as </span>gsk;
 <span class="kw">use </span>pango_sys <span class="kw">as </span>pango;
 
 <span class="attr">#[allow(unused_imports)]
@@ -34930,14 +34930,14 @@
     <span class="kw">pub fn </span>gtk_fixed_get_child_transform(
         fixed: <span class="kw-2">*mut </span><a href="#6929-6931">GtkFixed</a>,
         widget: <span class="kw-2">*mut </span><a href="#9046-9049">GtkWidget</a>,
-    ) -&gt; <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskTransform.html">gsk::GskTransform</a>;
+    ) -&gt; <span class="kw-2">*mut </span>gsk::GskTransform;
     <span class="kw">pub fn </span>gtk_fixed_move(fixed: <span class="kw-2">*mut </span><a href="#6929-6931">GtkFixed</a>, widget: <span class="kw-2">*mut </span><a href="#9046-9049">GtkWidget</a>, x: c_double, y: c_double);
     <span class="kw">pub fn </span>gtk_fixed_put(fixed: <span class="kw-2">*mut </span><a href="#6929-6931">GtkFixed</a>, widget: <span class="kw-2">*mut </span><a href="#9046-9049">GtkWidget</a>, x: c_double, y: c_double);
     <span class="kw">pub fn </span>gtk_fixed_remove(fixed: <span class="kw-2">*mut </span><a href="#6929-6931">GtkFixed</a>, widget: <span class="kw-2">*mut </span><a href="#9046-9049">GtkWidget</a>);
     <span class="kw">pub fn </span>gtk_fixed_set_child_transform(
         fixed: <span class="kw-2">*mut </span><a href="#6929-6931">GtkFixed</a>,
         widget: <span class="kw-2">*mut </span><a href="#9046-9049">GtkWidget</a>,
-        transform: <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskTransform.html">gsk::GskTransform</a>,
+        transform: <span class="kw-2">*mut </span>gsk::GskTransform,
     );
 
     <span class="comment">//=========================================================================
@@ -34952,10 +34952,10 @@
     </span><span class="kw">pub fn </span>gtk_fixed_layout_child_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gtk_fixed_layout_child_get_transform(
         child: <span class="kw-2">*mut </span><a href="#6955-6958">GtkFixedLayoutChild</a>,
-    ) -&gt; <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskTransform.html">gsk::GskTransform</a>;
+    ) -&gt; <span class="kw-2">*mut </span>gsk::GskTransform;
     <span class="kw">pub fn </span>gtk_fixed_layout_child_set_transform(
         child: <span class="kw-2">*mut </span><a href="#6955-6958">GtkFixedLayoutChild</a>,
-        transform: <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskTransform.html">gsk::GskTransform</a>,
+        transform: <span class="kw-2">*mut </span>gsk::GskTransform,
     );
 
     <span class="comment">//=========================================================================
@@ -38638,7 +38638,7 @@
     <span class="kw">pub fn </span>gtk_snapshot_new() -&gt; <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>;
     <span class="kw">pub fn </span>gtk_snapshot_append_border(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
-        outline: <span class="kw-2">*const </span><a href="../../gsk4_sys/struct.GskRoundedRect.html">gsk::GskRoundedRect</a>,
+        outline: <span class="kw-2">*const </span>gsk::GskRoundedRect,
         border_width: <span class="kw-2">*const </span>[c_float; <span class="number">4</span>],
         border_color: <span class="kw-2">*const </span>[gdk::GdkRGBA; <span class="number">4</span>],
     );
@@ -38656,20 +38656,20 @@
         bounds: <span class="kw-2">*const </span>graphene::graphene_rect_t,
         center: <span class="kw-2">*const </span>graphene::graphene_point_t,
         rotation: c_float,
-        stops: <span class="kw-2">*const </span><a href="../../gsk4_sys/struct.GskColorStop.html">gsk::GskColorStop</a>,
+        stops: <span class="kw-2">*const </span>gsk::GskColorStop,
         n_stops: size_t,
     );
     <span class="attr">#[cfg(feature = <span class="string">"v4_14"</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_14"</span>)))]
     </span><span class="kw">pub fn </span>gtk_snapshot_append_fill(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
-        path: <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskPath.html">gsk::GskPath</a>,
-        fill_rule: <a href="../../gsk4_sys/type.GskFillRule.html">gsk::GskFillRule</a>,
+        path: <span class="kw-2">*mut </span>gsk::GskPath,
+        fill_rule: gsk::GskFillRule,
         color: <span class="kw-2">*const </span>gdk::GdkRGBA,
     );
     <span class="kw">pub fn </span>gtk_snapshot_append_inset_shadow(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
-        outline: <span class="kw-2">*const </span><a href="../../gsk4_sys/struct.GskRoundedRect.html">gsk::GskRoundedRect</a>,
+        outline: <span class="kw-2">*const </span>gsk::GskRoundedRect,
         color: <span class="kw-2">*const </span>gdk::GdkRGBA,
         dx: c_float,
         dy: c_float,
@@ -38686,13 +38686,13 @@
         bounds: <span class="kw-2">*const </span>graphene::graphene_rect_t,
         start_point: <span class="kw-2">*const </span>graphene::graphene_point_t,
         end_point: <span class="kw-2">*const </span>graphene::graphene_point_t,
-        stops: <span class="kw-2">*const </span><a href="../../gsk4_sys/struct.GskColorStop.html">gsk::GskColorStop</a>,
+        stops: <span class="kw-2">*const </span>gsk::GskColorStop,
         n_stops: size_t,
     );
-    <span class="kw">pub fn </span>gtk_snapshot_append_node(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>, node: <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskRenderNode.html">gsk::GskRenderNode</a>);
+    <span class="kw">pub fn </span>gtk_snapshot_append_node(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>, node: <span class="kw-2">*mut </span>gsk::GskRenderNode);
     <span class="kw">pub fn </span>gtk_snapshot_append_outset_shadow(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
-        outline: <span class="kw-2">*const </span><a href="../../gsk4_sys/struct.GskRoundedRect.html">gsk::GskRoundedRect</a>,
+        outline: <span class="kw-2">*const </span>gsk::GskRoundedRect,
         color: <span class="kw-2">*const </span>gdk::GdkRGBA,
         dx: c_float,
         dy: c_float,
@@ -38707,7 +38707,7 @@
         vradius: c_float,
         start: c_float,
         end: c_float,
-        stops: <span class="kw-2">*const </span><a href="../../gsk4_sys/struct.GskColorStop.html">gsk::GskColorStop</a>,
+        stops: <span class="kw-2">*const </span>gsk::GskColorStop,
         n_stops: size_t,
     );
     <span class="kw">pub fn </span>gtk_snapshot_append_repeating_linear_gradient(
@@ -38715,7 +38715,7 @@
         bounds: <span class="kw-2">*const </span>graphene::graphene_rect_t,
         start_point: <span class="kw-2">*const </span>graphene::graphene_point_t,
         end_point: <span class="kw-2">*const </span>graphene::graphene_point_t,
-        stops: <span class="kw-2">*const </span><a href="../../gsk4_sys/struct.GskColorStop.html">gsk::GskColorStop</a>,
+        stops: <span class="kw-2">*const </span>gsk::GskColorStop,
         n_stops: size_t,
     );
     <span class="kw">pub fn </span>gtk_snapshot_append_repeating_radial_gradient(
@@ -38726,7 +38726,7 @@
         vradius: c_float,
         start: c_float,
         end: c_float,
-        stops: <span class="kw-2">*const </span><a href="../../gsk4_sys/struct.GskColorStop.html">gsk::GskColorStop</a>,
+        stops: <span class="kw-2">*const </span>gsk::GskColorStop,
         n_stops: size_t,
     );
     <span class="attr">#[cfg(feature = <span class="string">"v4_10"</span>)]
@@ -38734,15 +38734,15 @@
     </span><span class="kw">pub fn </span>gtk_snapshot_append_scaled_texture(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
         texture: <span class="kw-2">*mut </span>gdk::GdkTexture,
-        filter: <a href="../../gsk4_sys/type.GskScalingFilter.html">gsk::GskScalingFilter</a>,
+        filter: gsk::GskScalingFilter,
         bounds: <span class="kw-2">*const </span>graphene::graphene_rect_t,
     );
     <span class="attr">#[cfg(feature = <span class="string">"v4_14"</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_14"</span>)))]
     </span><span class="kw">pub fn </span>gtk_snapshot_append_stroke(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
-        path: <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskPath.html">gsk::GskPath</a>,
-        stroke: <span class="kw-2">*const </span><a href="../../gsk4_sys/struct.GskStroke.html">gsk::GskStroke</a>,
+        path: <span class="kw-2">*mut </span>gsk::GskPath,
+        stroke: <span class="kw-2">*const </span>gsk::GskStroke,
         color: <span class="kw-2">*const </span>gdk::GdkRGBA,
     );
     <span class="kw">pub fn </span>gtk_snapshot_append_texture(
@@ -38750,7 +38750,7 @@
         texture: <span class="kw-2">*mut </span>gdk::GdkTexture,
         bounds: <span class="kw-2">*const </span>graphene::graphene_rect_t,
     );
-    <span class="kw">pub fn </span>gtk_snapshot_free_to_node(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>) -&gt; <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskRenderNode.html">gsk::GskRenderNode</a>;
+    <span class="kw">pub fn </span>gtk_snapshot_free_to_node(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>) -&gt; <span class="kw-2">*mut </span>gsk::GskRenderNode;
     <span class="kw">pub fn </span>gtk_snapshot_free_to_paintable(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
         size: <span class="kw-2">*const </span>graphene::graphene_size_t,
@@ -38758,7 +38758,7 @@
     <span class="kw">pub fn </span>gtk_snapshot_gl_shader_pop_texture(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>);
     <span class="kw">pub fn </span>gtk_snapshot_perspective(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>, depth: c_float);
     <span class="kw">pub fn </span>gtk_snapshot_pop(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>);
-    <span class="kw">pub fn </span>gtk_snapshot_push_blend(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>, blend_mode: <a href="../../gsk4_sys/type.GskBlendMode.html">gsk::GskBlendMode</a>);
+    <span class="kw">pub fn </span>gtk_snapshot_push_blend(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>, blend_mode: gsk::GskBlendMode);
     <span class="kw">pub fn </span>gtk_snapshot_push_blur(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>, radius: c_double);
     <span class="kw">pub fn </span>gtk_snapshot_push_clip(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
@@ -38775,18 +38775,18 @@
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_14"</span>)))]
     </span><span class="kw">pub fn </span>gtk_snapshot_push_fill(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
-        path: <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskPath.html">gsk::GskPath</a>,
-        fill_rule: <a href="../../gsk4_sys/type.GskFillRule.html">gsk::GskFillRule</a>,
+        path: <span class="kw-2">*mut </span>gsk::GskPath,
+        fill_rule: gsk::GskFillRule,
     );
     <span class="kw">pub fn </span>gtk_snapshot_push_gl_shader(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
-        shader: <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskGLShader.html">gsk::GskGLShader</a>,
+        shader: <span class="kw-2">*mut </span>gsk::GskGLShader,
         bounds: <span class="kw-2">*const </span>graphene::graphene_rect_t,
         take_args: <span class="kw-2">*mut </span>glib::GBytes,
     );
     <span class="attr">#[cfg(feature = <span class="string">"v4_10"</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_10"</span>)))]
-    </span><span class="kw">pub fn </span>gtk_snapshot_push_mask(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>, mask_mode: <a href="../../gsk4_sys/type.GskMaskMode.html">gsk::GskMaskMode</a>);
+    </span><span class="kw">pub fn </span>gtk_snapshot_push_mask(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>, mask_mode: gsk::GskMaskMode);
     <span class="kw">pub fn </span>gtk_snapshot_push_opacity(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>, opacity: c_double);
     <span class="kw">pub fn </span>gtk_snapshot_push_repeat(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
@@ -38795,19 +38795,19 @@
     );
     <span class="kw">pub fn </span>gtk_snapshot_push_rounded_clip(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
-        bounds: <span class="kw-2">*const </span><a href="../../gsk4_sys/struct.GskRoundedRect.html">gsk::GskRoundedRect</a>,
+        bounds: <span class="kw-2">*const </span>gsk::GskRoundedRect,
     );
     <span class="kw">pub fn </span>gtk_snapshot_push_shadow(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
-        shadow: <span class="kw-2">*const </span><a href="../../gsk4_sys/struct.GskShadow.html">gsk::GskShadow</a>,
+        shadow: <span class="kw-2">*const </span>gsk::GskShadow,
         n_shadows: size_t,
     );
     <span class="attr">#[cfg(feature = <span class="string">"v4_14"</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_14"</span>)))]
     </span><span class="kw">pub fn </span>gtk_snapshot_push_stroke(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
-        path: <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskPath.html">gsk::GskPath</a>,
-        stroke: <span class="kw-2">*const </span><a href="../../gsk4_sys/struct.GskStroke.html">gsk::GskStroke</a>,
+        path: <span class="kw-2">*mut </span>gsk::GskPath,
+        stroke: <span class="kw-2">*const </span>gsk::GskStroke,
     );
     <span class="kw">pub fn </span>gtk_snapshot_render_background(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
@@ -38864,12 +38864,12 @@
         factor_y: c_float,
         factor_z: c_float,
     );
-    <span class="kw">pub fn </span>gtk_snapshot_to_node(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>) -&gt; <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskRenderNode.html">gsk::GskRenderNode</a>;
+    <span class="kw">pub fn </span>gtk_snapshot_to_node(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>) -&gt; <span class="kw-2">*mut </span>gsk::GskRenderNode;
     <span class="kw">pub fn </span>gtk_snapshot_to_paintable(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
         size: <span class="kw-2">*const </span>graphene::graphene_size_t,
     ) -&gt; <span class="kw-2">*mut </span>gdk::GdkPaintable;
-    <span class="kw">pub fn </span>gtk_snapshot_transform(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>, transform: <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskTransform.html">gsk::GskTransform</a>);
+    <span class="kw">pub fn </span>gtk_snapshot_transform(snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>, transform: <span class="kw-2">*mut </span>gsk::GskTransform);
     <span class="kw">pub fn </span>gtk_snapshot_transform_matrix(
         snapshot: <span class="kw-2">*mut </span><a href="#8525-8528">GtkSnapshot</a>,
         matrix: <span class="kw-2">*const </span>graphene::graphene_matrix_t,
@@ -40764,7 +40764,7 @@
         width: c_int,
         height: c_int,
         baseline: c_int,
-        transform: <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskTransform.html">gsk::GskTransform</a>,
+        transform: <span class="kw-2">*mut </span>gsk::GskTransform,
     );
     <span class="kw">pub fn </span>gtk_widget_child_focus(widget: <span class="kw-2">*mut </span><a href="#9046-9049">GtkWidget</a>, direction: <a href="#397">GtkDirectionType</a>) -&gt; gboolean;
     <span class="kw">pub fn </span>gtk_widget_compute_bounds(
@@ -41577,7 +41577,7 @@
     //=========================================================================
     </span><span class="kw">pub fn </span>gtk_native_get_type() -&gt; GType;
     <span class="kw">pub fn </span>gtk_native_get_for_surface(surface: <span class="kw-2">*mut </span>gdk::GdkSurface) -&gt; <span class="kw-2">*mut </span><a href="#9298-9301">GtkNative</a>;
-    <span class="kw">pub fn </span>gtk_native_get_renderer(self_: <span class="kw-2">*mut </span><a href="#9298-9301">GtkNative</a>) -&gt; <span class="kw-2">*mut </span><a href="../../gsk4_sys/struct.GskRenderer.html">gsk::GskRenderer</a>;
+    <span class="kw">pub fn </span>gtk_native_get_renderer(self_: <span class="kw-2">*mut </span><a href="#9298-9301">GtkNative</a>) -&gt; <span class="kw-2">*mut </span>gsk::GskRenderer;
     <span class="kw">pub fn </span>gtk_native_get_surface(self_: <span class="kw-2">*mut </span><a href="#9298-9301">GtkNative</a>) -&gt; <span class="kw-2">*mut </span>gdk::GdkSurface;
     <span class="kw">pub fn </span>gtk_native_get_surface_transform(
         self_: <span class="kw-2">*mut </span><a href="#9298-9301">GtkNative</a>,
