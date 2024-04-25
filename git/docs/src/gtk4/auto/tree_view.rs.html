@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/tree_view.rs`."><title>tree_view.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-081576b923113409.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0-nightly (dbce3b43b 2024-04-20)" data-channel="nightly" data-search-js="search-bf21c90c8c1d92b1.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-e32f0c247825364d.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-09095024cf37855e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/tree_view.rs`."><title>tree_view.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-081576b923113409.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0-nightly (ef8b9dcf2 2024-04-24)" data-channel="nightly" data-search-js="search-bf21c90c8c1d92b1.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-e32f0c247825364d.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-09095024cf37855e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -4959,9 +4959,9 @@
 
 </span><span class="kw">use crate</span>::{
     <a href="accessible.rs.html#19-69">Accessible</a>, <a href="enums.rs.html#922-1222">AccessibleRole</a>, <a href="adjustment.rs.html#12-97">Adjustment</a>, <a href="../enums.rs.html#77-107">Align</a>, <a href="buildable.rs.html#7-31">Buildable</a>, <a href="cell_renderer.rs.html#17-183">CellRenderer</a>, <a href="constraint_target.rs.html#7-22">ConstraintTarget</a>,
-    <a href="editable.rs.html#16-676">Editable</a>, <a href="layout_manager.rs.html#8-71">LayoutManager</a>, <a href="enums.rs.html#6804-6837">MovementStep</a>, <a href="enums.rs.html#7516-7527">Overflow</a>, <a href="scrollable.rs.html#13-82">Scrollable</a>, <a href="enums.rs.html#9992-10001">ScrollablePolicy</a>, <a href="tooltip.rs.html#8-46">Tooltip</a>,
-    <a href="tree_iter.rs.html#7-24">TreeIter</a>, <a href="tree_model.rs.html#14-276">TreeModel</a>, <a href="tree_path.rs.html#7-20">TreePath</a>, <a href="tree_selection.rs.html#14-71">TreeSelection</a>, <a href="tree_view_column.rs.html#17-134">TreeViewColumn</a>, <a href="enums.rs.html#12436-12451">TreeViewDropPosition</a>,
-    <a href="enums.rs.html#12545-12560">TreeViewGridLines</a>, <a href="widget.rs.html#18-853">Widget</a>,
+    <a href="editable.rs.html#16-676">Editable</a>, <a href="layout_manager.rs.html#8-71">LayoutManager</a>, <a href="enums.rs.html#6924-6957">MovementStep</a>, <a href="enums.rs.html#7636-7647">Overflow</a>, <a href="scrollable.rs.html#13-82">Scrollable</a>, <a href="enums.rs.html#10112-10121">ScrollablePolicy</a>, <a href="tooltip.rs.html#8-46">Tooltip</a>,
+    <a href="tree_iter.rs.html#7-24">TreeIter</a>, <a href="tree_model.rs.html#14-276">TreeModel</a>, <a href="tree_path.rs.html#7-20">TreePath</a>, <a href="tree_selection.rs.html#14-71">TreeSelection</a>, <a href="tree_view_column.rs.html#17-134">TreeViewColumn</a>, <a href="enums.rs.html#12556-12571">TreeViewDropPosition</a>,
+    <a href="enums.rs.html#12665-12680">TreeViewGridLines</a>, <a href="widget.rs.html#18-853">Widget</a>,
 };
 <span class="kw">use </span>glib::{
     <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/prelude/index.html">prelude</a>::<span class="kw-2">*</span>,
@@ -5803,7 +5803,7 @@
         }
     }
 
-    <span class="kw">pub fn </span>enable_grid_lines(<span class="self">self</span>, enable_grid_lines: <a href="enums.rs.html#12545-12560">TreeViewGridLines</a>) -&gt; <span class="self">Self </span>{
+    <span class="kw">pub fn </span>enable_grid_lines(<span class="self">self</span>, enable_grid_lines: <a href="enums.rs.html#12665-12680">TreeViewGridLines</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <span class="self"><a href="#852">self</a>
                 </span>.builder
@@ -6111,7 +6111,7 @@
     ///
     /// This property is meant to be set by widget implementations,
     /// typically in their instance init function.
-    </span><span class="kw">pub fn </span>overflow(<span class="self">self</span>, overflow: <a href="enums.rs.html#7516-7527">Overflow</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>overflow(<span class="self">self</span>, overflow: <a href="enums.rs.html#7636-7647">Overflow</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#1160">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"overflow"</span>, <a href="#1160">overflow</a>),
         }
@@ -6228,7 +6228,7 @@
     }
 
     <span class="doccomment">/// Determines when horizontal scrolling should start.
-    </span><span class="kw">pub fn </span>hscroll_policy(<span class="self">self</span>, hscroll_policy: <a href="enums.rs.html#9992-10001">ScrollablePolicy</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>hscroll_policy(<span class="self">self</span>, hscroll_policy: <a href="enums.rs.html#10112-10121">ScrollablePolicy</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#1277">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"hscroll-policy"</span>, <a href="#1277">hscroll_policy</a>),
         }
@@ -6246,7 +6246,7 @@
     }
 
     <span class="doccomment">/// Determines when vertical scrolling should start.
-    </span><span class="kw">pub fn </span>vscroll_policy(<span class="self">self</span>, vscroll_policy: <a href="enums.rs.html#9992-10001">ScrollablePolicy</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>vscroll_policy(<span class="self">self</span>, vscroll_policy: <a href="enums.rs.html#10112-10121">ScrollablePolicy</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#1295">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"vscroll-policy"</span>, <a href="#1295">vscroll_policy</a>),
         }
@@ -6935,7 +6935,7 @@
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         drag_x: <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
         drag_y: <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
-    ) -&gt; <span class="prelude-ty">Option</span>&lt;(<span class="prelude-ty">Option</span>&lt;<a href="tree_path.rs.html#7-20">TreePath</a>&gt;, <a href="enums.rs.html#12436-12451">TreeViewDropPosition</a>)&gt; {
+    ) -&gt; <span class="prelude-ty">Option</span>&lt;(<span class="prelude-ty">Option</span>&lt;<a href="tree_path.rs.html#7-20">TreePath</a>&gt;, <a href="enums.rs.html#12556-12571">TreeViewDropPosition</a>)&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>path = <a href="https://doc.rust-lang.org/nightly/core/ptr/fn.null_mut.html">std::ptr::null_mut</a>();
             <span class="kw">let </span><span class="kw-2">mut </span>pos = <a href="https://doc.rust-lang.org/nightly/core/mem/maybe_uninit/union.MaybeUninit.html#method.uninit">std::mem::MaybeUninit::uninit</a>();
@@ -6972,7 +6972,7 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">"gtk_tree_view_get_drag_dest_row"</span>)]
     #[doc(alias = <span class="string">"get_drag_dest_row"</span>)]
-    </span><span class="kw">fn </span>drag_dest_row(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (<span class="prelude-ty">Option</span>&lt;<a href="tree_path.rs.html#7-20">TreePath</a>&gt;, <a href="enums.rs.html#12436-12451">TreeViewDropPosition</a>) {
+    </span><span class="kw">fn </span>drag_dest_row(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (<span class="prelude-ty">Option</span>&lt;<a href="tree_path.rs.html#7-20">TreePath</a>&gt;, <a href="enums.rs.html#12556-12571">TreeViewDropPosition</a>) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>path = <a href="https://doc.rust-lang.org/nightly/core/ptr/fn.null_mut.html">std::ptr::null_mut</a>();
             <span class="kw">let </span><span class="kw-2">mut </span>pos = <a href="https://doc.rust-lang.org/nightly/core/mem/maybe_uninit/union.MaybeUninit.html#method.uninit">std::mem::MaybeUninit::uninit</a>();
@@ -7087,7 +7087,7 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">"gtk_tree_view_get_grid_lines"</span>)]
     #[doc(alias = <span class="string">"get_grid_lines"</span>)]
-    </span><span class="kw">fn </span>grid_lines(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="enums.rs.html#12545-12560">TreeViewGridLines</a> {
+    </span><span class="kw">fn </span>grid_lines(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="enums.rs.html#12665-12680">TreeViewGridLines</a> {
         <span class="kw">unsafe </span>{
             <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib.html">from_glib</a>(<a href="../../../gtk4_sys/fn.gtk_tree_view_get_grid_lines.html">ffi::gtk_tree_view_get_grid_lines</a>(
                 <a class="self" href="#2136">self</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
@@ -8215,7 +8215,7 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">"v4_10"</span>, deprecated = <span class="string">"Since 4.10"</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">"gtk_tree_view_set_drag_dest_row"</span>)]
-    </span><span class="kw">fn </span>set_drag_dest_row(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><a href="tree_path.rs.html#7-20">TreePath</a>&gt;, pos: <a href="enums.rs.html#12436-12451">TreeViewDropPosition</a>) {
+    </span><span class="kw">fn </span>set_drag_dest_row(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><a href="tree_path.rs.html#7-20">TreePath</a>&gt;, pos: <a href="enums.rs.html#12556-12571">TreeViewDropPosition</a>) {
         <span class="kw">unsafe </span>{
             <a href="../../../gtk4_sys/fn.gtk_tree_view_set_drag_dest_row.html">ffi::gtk_tree_view_set_drag_dest_row</a>(
                 <a class="self" href="#3264">self</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
@@ -8326,7 +8326,7 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">"v4_10"</span>, deprecated = <span class="string">"Since 4.10"</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">"gtk_tree_view_set_grid_lines"</span>)]
-    </span><span class="kw">fn </span>set_grid_lines(<span class="kw-2">&amp;</span><span class="self">self</span>, grid_lines: <a href="enums.rs.html#12545-12560">TreeViewGridLines</a>) {
+    </span><span class="kw">fn </span>set_grid_lines(<span class="kw-2">&amp;</span><span class="self">self</span>, grid_lines: <a href="enums.rs.html#12665-12680">TreeViewGridLines</a>) {
         <span class="kw">unsafe </span>{
             <a href="../../../gtk4_sys/fn.gtk_tree_view_set_grid_lines.html">ffi::gtk_tree_view_set_grid_lines</a>(
                 <a class="self" href="#3375">self</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
@@ -8799,12 +8799,12 @@
     }
 
     <span class="attr">#[doc(alias = <span class="string">"enable-grid-lines"</span>)]
-    </span><span class="kw">fn </span>enable_grid_lines(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="enums.rs.html#12545-12560">TreeViewGridLines</a> {
+    </span><span class="kw">fn </span>enable_grid_lines(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="enums.rs.html#12665-12680">TreeViewGridLines</a> {
         <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/trait.ObjectExt.html#tymethod.property">ObjectExt::property</a>(<a class="self" href="#3848">self</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>(), <span class="string">"enable-grid-lines"</span>)
     }
 
     <span class="attr">#[doc(alias = <span class="string">"enable-grid-lines"</span>)]
-    </span><span class="kw">fn </span>set_enable_grid_lines(<span class="kw-2">&amp;</span><span class="self">self</span>, enable_grid_lines: <a href="enums.rs.html#12545-12560">TreeViewGridLines</a>) {
+    </span><span class="kw">fn </span>set_enable_grid_lines(<span class="kw-2">&amp;</span><span class="self">self</span>, enable_grid_lines: <a href="enums.rs.html#12665-12680">TreeViewGridLines</a>) {
         <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/object/trait.ObjectExt.html#tymethod.set_property">ObjectExt::set_property</a>(<a class="self" href="#3853">self</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>(), <span class="string">"enable-grid-lines"</span>, <a href="#3853">enable_grid_lines</a>)
     }
 
@@ -8923,13 +8923,13 @@
     ///
     /// [`true`] if @step is supported, [`false`] otherwise.
     </span><span class="attr">#[doc(alias = <span class="string">"move-cursor"</span>)]
-    </span><span class="kw">fn </span>connect_move_cursor&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <a href="enums.rs.html#6804-6837">MovementStep</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> + <span class="lifetime">'static</span>&gt;(
+    </span><span class="kw">fn </span>connect_move_cursor&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <a href="enums.rs.html#6924-6957">MovementStep</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> + <span class="lifetime">'static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; <a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/signal/struct.SignalHandlerId.html">SignalHandlerId</a> {
         <span class="kw">unsafe extern </span><span class="string">"C" </span><span class="kw">fn </span>move_cursor_trampoline&lt;
             P: IsA&lt;<a href="#19-764">TreeView</a>&gt;,
-            F: Fn(<span class="kw-2">&amp;</span>P, <a href="enums.rs.html#6804-6837">MovementStep</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> + <span class="lifetime">'static</span>,
+            F: Fn(<span class="kw-2">&amp;</span>P, <a href="enums.rs.html#6924-6957">MovementStep</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> + <span class="lifetime">'static</span>,
         &gt;(
             this: <span class="kw-2">*mut </span><a href="../../../gtk4_sys/struct.GtkTreeView.html">ffi::GtkTreeView</a>,
             step: <a href="../../../gtk4_sys/type.GtkMovementStep.html">ffi::GtkMovementStep</a>,
@@ -8963,7 +8963,7 @@
 
     <span class="kw">fn </span>emit_move_cursor(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
-        step: <a href="enums.rs.html#6804-6837">MovementStep</a>,
+        step: <a href="enums.rs.html#6924-6957">MovementStep</a>,
         direction: <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
         extend: <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
         modify: <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,

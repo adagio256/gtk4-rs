@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4-macros/src/composite_template_derive.rs`."><title>composite_template_derive.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-081576b923113409.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4_macros" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0-nightly (dbce3b43b 2024-04-20)" data-channel="nightly" data-search-js="search-bf21c90c8c1d92b1.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-e32f0c247825364d.js"></script><script defer src="../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-09095024cf37855e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4-macros/src/composite_template_derive.rs`."><title>composite_template_derive.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-081576b923113409.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4_macros" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0-nightly (ef8b9dcf2 2024-04-24)" data-channel="nightly" data-search-js="search-bf21c90c8c1d92b1.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-e32f0c247825364d.js"></script><script defer src="../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-09095024cf37855e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -320,47 +320,47 @@
 </span><span class="attr">#[cfg(feature = <span class="string">"xml_validation"</span>)]
 </span><span class="kw">use </span><a href="https://doc.rust-lang.org/nightly/std/collections/hash/map/struct.HashMap.html">std::collections::HashMap</a>;
 
-<span class="kw">use </span>proc_macro2::{<a href="https://docs.rs/proc-macro2/1.0.80/proc_macro2/struct.Span.html">Span</a>, <a href="https://docs.rs/proc-macro2/1.0.80/proc_macro2/struct.TokenStream.html">TokenStream</a>};
+<span class="kw">use </span>proc_macro2::{<a href="https://docs.rs/proc-macro2/1.0.81/proc_macro2/struct.Span.html">Span</a>, <a href="https://docs.rs/proc-macro2/1.0.81/proc_macro2/struct.TokenStream.html">TokenStream</a>};
 <span class="attr">#[cfg(feature = <span class="string">"xml_validation"</span>)]
 </span><span class="kw">use </span>quick_xml::name::QName;
-<span class="kw">use </span><a href="https://docs.rs/quote/1.0.35/quote/macro.quote.html">quote::quote</a>;
-<span class="kw">use </span>syn::{<a href="https://docs.rs/syn/2.0.57/syn/derive/enum.Data.html">Data</a>, <a href="https://docs.rs/syn/2.0.57/syn/error/struct.Error.html">Error</a>, <span class="prelude-ty">Result</span>};
+<span class="kw">use </span><a href="https://docs.rs/quote/1.0.36/quote/macro.quote.html">quote::quote</a>;
+<span class="kw">use </span>syn::{<a href="https://docs.rs/syn/2.0.60/syn/derive/enum.Data.html">Data</a>, <a href="https://docs.rs/syn/2.0.60/syn/error/struct.Error.html">Error</a>, <span class="prelude-ty">Result</span>};
 
 <span class="attr">#[cfg(feature = <span class="string">"blueprint"</span>)]
 </span><span class="kw">use </span><a href="lib.rs.html#9"><span class="kw">crate</span>::blueprint</a>::<span class="kw-2">*</span>;
 <span class="kw">use crate</span>::{<a href="lib.rs.html#7">attribute_parser</a>::<span class="kw-2">*</span>, <a href="lib.rs.html#12">util</a>::<span class="kw-2">*</span>};
 
-<span class="kw">fn </span>gen_set_template(source: <span class="kw-2">&amp;</span><a href="attribute_parser.rs.html#115-121">TemplateSource</a>, crate_ident: <span class="kw-2">&amp;</span><a href="https://docs.rs/proc-macro2/1.0.80/proc_macro2/struct.Ident.html">proc_macro2::Ident</a>) -&gt; <a href="https://docs.rs/proc-macro2/1.0.80/proc_macro2/struct.TokenStream.html">TokenStream</a> {
+<span class="kw">fn </span>gen_set_template(source: <span class="kw-2">&amp;</span><a href="attribute_parser.rs.html#115-121">TemplateSource</a>, crate_ident: <span class="kw-2">&amp;</span><a href="https://docs.rs/proc-macro2/1.0.81/proc_macro2/struct.Ident.html">proc_macro2::Ident</a>) -&gt; <a href="https://docs.rs/proc-macro2/1.0.81/proc_macro2/struct.TokenStream.html">TokenStream</a> {
     <span class="kw">match </span><a href="#16">source</a> {
         <a href="attribute_parser.rs.html#116">TemplateSource::File</a>(file) =&gt; {
             <span class="kw">let </span>template = <span class="kw">if </span>file.ends_with(<span class="string">".blp"</span>) {
                 <span class="kw">if </span><a class="macro" href="https://doc.rust-lang.org/nightly/core/macro.cfg.html">cfg!</a>(feature = <span class="string">"blueprint"</span>) {
-                    <a class="macro" href="https://docs.rs/quote/1.0.35/quote/macro.quote.html">quote!</a> {
+                    <a class="macro" href="https://docs.rs/quote/1.0.36/quote/macro.quote.html">quote!</a> {
                         #<span class="macro">crate_ident::gtk4_macros::include_blueprint!</span>(#file).as_bytes()
                     }
                 } <span class="kw">else </span>{
                     <a class="macro" href="https://doc.rust-lang.org/nightly/std/macro.panic.html">panic!</a>(<span class="string">"blueprint feature is disabled"</span>)
                 }
             } <span class="kw">else </span>{
-                <a class="macro" href="https://docs.rs/quote/1.0.35/quote/macro.quote.html">quote!</a> {
+                <a class="macro" href="https://docs.rs/quote/1.0.36/quote/macro.quote.html">quote!</a> {
                     <span class="macro">include_bytes!</span>(#file)
                 }
             };
 
-            <a class="macro" href="https://docs.rs/quote/1.0.35/quote/macro.quote.html">quote!</a> {
+            <a class="macro" href="https://docs.rs/quote/1.0.36/quote/macro.quote.html">quote!</a> {
                 #crate_ident::subclass::widget::WidgetClassExt::set_template_static(
                         klass,
                         #template,
                 );
             }
         }
-        <a href="attribute_parser.rs.html#117">TemplateSource::Resource</a>(resource) =&gt; <a class="macro" href="https://docs.rs/quote/1.0.35/quote/macro.quote.html">quote!</a> {
+        <a href="attribute_parser.rs.html#117">TemplateSource::Resource</a>(resource) =&gt; <a class="macro" href="https://docs.rs/quote/1.0.36/quote/macro.quote.html">quote!</a> {
             #crate_ident::subclass::widget::WidgetClassExt::set_template_from_resource(
                 klass,
                 <span class="kw-2">&amp;</span>#resource,
             );
         },
-        <a href="attribute_parser.rs.html#118">TemplateSource::Xml</a>(template) =&gt; <a class="macro" href="https://docs.rs/quote/1.0.35/quote/macro.quote.html">quote!</a> {
+        <a href="attribute_parser.rs.html#118">TemplateSource::Xml</a>(template) =&gt; <a class="macro" href="https://docs.rs/quote/1.0.36/quote/macro.quote.html">quote!</a> {
             #crate_ident::subclass::widget::WidgetClassExt::set_template_static(
                 klass,
                 #template.as_bytes(),
@@ -371,7 +371,7 @@
             <span class="kw">let </span>template =
                 <a href="blueprint.rs.html#8-29">compile_blueprint</a>(<a href="#53">blueprint</a>.<a href="https://doc.rust-lang.org/nightly/alloc/string/struct.String.html#method.as_bytes">as_bytes</a>()).<a href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html#method.expect">expect</a>(<span class="string">"can't compile blueprint"</span>);
 
-            <a class="macro" href="https://docs.rs/quote/1.0.35/quote/macro.quote.html">quote!</a> {
+            <a class="macro" href="https://docs.rs/quote/1.0.36/quote/macro.quote.html">quote!</a> {
                 #crate_ident::subclass::widget::WidgetClassExt::set_template_static(
                     klass,
                     #template.as_bytes(),
@@ -406,8 +406,8 @@
             <span class="prelude-val">Ok</span>(Event::Empty(e)) =&gt; <span class="prelude-val">Some</span>(<a href="#89">e</a>),
             <span class="prelude-val">Ok</span>(Event::Eof) =&gt; <span class="kw">break</span>,
             <span class="prelude-val">Err</span>(e) =&gt; {
-                <span class="kw">return </span><span class="prelude-val">Err</span>(<a href="https://docs.rs/syn/2.0.57/syn/error/struct.Error.html#method.new">Error::new</a>(
-                    <a href="https://docs.rs/proc-macro2/1.0.80/proc_macro2/struct.Span.html#method.call_site">Span::call_site</a>(),
+                <span class="kw">return </span><span class="prelude-val">Err</span>(<a href="https://docs.rs/syn/2.0.60/syn/error/struct.Error.html#method.new">Error::new</a>(
+                    <a href="https://docs.rs/proc-macro2/1.0.81/proc_macro2/struct.Span.html#method.call_site">Span::call_site</a>(),
                     <a class="macro" href="https://doc.rust-lang.org/nightly/alloc/macro.format.html">format!</a>(
                         <span class="string">"Failed reading template XML at position {}: {:?}"</span>,
                         reader.buffer_position(),
@@ -432,7 +432,7 @@
     }
 
     <span class="kw">if let </span><span class="prelude-val">Some</span>((name, span)) = <a href="#76">ids_left</a>.<a href="https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#tymethod.into_iter">into_iter</a>().<a href="https://doc.rust-lang.org/nightly/core/iter/traits/iterator/trait.Iterator.html#tymethod.next">next</a>() {
-        <span class="kw">return </span><span class="prelude-val">Err</span>(<a href="https://docs.rs/syn/2.0.57/syn/error/struct.Error.html#method.new">Error::new</a>(
+        <span class="kw">return </span><span class="prelude-val">Err</span>(<a href="https://docs.rs/syn/2.0.60/syn/error/struct.Error.html#method.new">Error::new</a>(
             <a href="#117">span</a>,
             <a class="macro" href="https://doc.rust-lang.org/nightly/alloc/macro.format.html">format!</a>(<span class="string">"Template child with id `{name}` not found in template XML"</span>,),
         ));
@@ -441,7 +441,7 @@
     <span class="prelude-val">Ok</span>(())
 }
 
-<span class="kw">fn </span>gen_template_child_bindings(fields: <span class="kw-2">&amp;</span>[<a href="attribute_parser.rs.html#190-194">AttributedField</a>]) -&gt; <a href="https://docs.rs/proc-macro2/1.0.80/proc_macro2/struct.TokenStream.html">TokenStream</a> {
+<span class="kw">fn </span>gen_template_child_bindings(fields: <span class="kw-2">&amp;</span>[<a href="attribute_parser.rs.html#190-194">AttributedField</a>]) -&gt; <a href="https://docs.rs/proc-macro2/1.0.81/proc_macro2/struct.TokenStream.html">TokenStream</a> {
     <span class="kw">let </span>crate_ident = <a href="util.rs.html#6-17">crate_ident_new</a>();
 
     <span class="kw">let </span>recurse = <a href="#127">fields</a>.<a href="https://doc.rust-lang.org/nightly/core/foreigntype.slice.html#method.iter">iter</a>().<a href="https://doc.rust-lang.org/nightly/core/iter/traits/iterator/trait.Iterator.html#tymethod.map">map</a>(|field| <span class="kw">match </span><a href="#130">field</a>.attr.ty {
@@ -458,7 +458,7 @@
                 }
             });
 
-            <a class="macro" href="https://docs.rs/quote/1.0.35/quote/macro.quote.html">quote!</a> {
+            <a class="macro" href="https://docs.rs/quote/1.0.36/quote/macro.quote.html">quote!</a> {
                 klass.bind_template_child_with_offset(
                     <span class="kw-2">&amp;</span>#value_id,
                     #value_internal,
@@ -468,12 +468,12 @@
         }
     });
 
-    <a class="macro" href="https://docs.rs/quote/1.0.35/quote/macro.quote.html">quote!</a> {
+    <a class="macro" href="https://docs.rs/quote/1.0.36/quote/macro.quote.html">quote!</a> {
         #(#recurse)*
     }
 }
 
-<span class="kw">fn </span>gen_template_child_type_checks(fields: <span class="kw-2">&amp;</span>[<a href="attribute_parser.rs.html#190-194">AttributedField</a>]) -&gt; <a href="https://docs.rs/proc-macro2/1.0.80/proc_macro2/struct.TokenStream.html">TokenStream</a> {
+<span class="kw">fn </span>gen_template_child_type_checks(fields: <span class="kw-2">&amp;</span>[<a href="attribute_parser.rs.html#190-194">AttributedField</a>]) -&gt; <a href="https://docs.rs/proc-macro2/1.0.81/proc_macro2/struct.TokenStream.html">TokenStream</a> {
     <span class="kw">let </span>crate_ident = <a href="util.rs.html#6-17">crate_ident_new</a>();
 
     <span class="kw">let </span>recurse = <a href="#159">fields</a>.<a href="https://doc.rust-lang.org/nightly/core/foreigntype.slice.html#method.iter">iter</a>().<a href="https://doc.rust-lang.org/nightly/core/iter/traits/iterator/trait.Iterator.html#tymethod.map">map</a>(|field| <span class="kw">match </span><a href="#162">field</a>.attr.ty {
@@ -481,7 +481,7 @@
             <span class="kw">let </span>ty = <span class="kw-2">&amp;</span><a href="#162">field</a>.ty;
             <span class="kw">let </span>ident = <span class="kw-2">&amp;</span><a href="#162">field</a>.ident;
             <span class="kw">let </span>type_err = <a class="macro" href="https://doc.rust-lang.org/nightly/alloc/macro.format.html">format!</a>(<span class="string">"Template child with id `{}` has incompatible type. XML has {{:?}}, struct has {{:?}}"</span>, field.id());
-            <a class="macro" href="https://docs.rs/quote/1.0.35/quote/macro.quote.html">quote!</a> {
+            <a class="macro" href="https://docs.rs/quote/1.0.36/quote/macro.quote.html">quote!</a> {
                 <span class="kw">let </span>ty = &lt;&lt;#ty <span class="kw">as </span>::std::ops::Deref&gt;::Target <span class="kw">as </span>#crate_ident::glib::prelude::StaticType&gt;::static_type();
                 <span class="kw">let </span>child_ty = #crate_ident::glib::prelude::ObjectExt::type_(::std::ops::Deref::deref(<span class="kw-2">&amp;</span>imp.#ident));
                 <span class="kw">if </span>!child_ty.is_a(ty) {
@@ -491,20 +491,20 @@
         }
     });
 
-    <a class="macro" href="https://docs.rs/quote/1.0.35/quote/macro.quote.html">quote!</a> {
+    <a class="macro" href="https://docs.rs/quote/1.0.36/quote/macro.quote.html">quote!</a> {
         #(#recurse)*
     }
 }
 
-<span class="kw">pub fn </span>impl_composite_template(input: <span class="kw-2">&amp;</span><a href="https://docs.rs/syn/2.0.57/syn/derive/struct.DeriveInput.html">syn::DeriveInput</a>) -&gt; <span class="prelude-ty">Result</span>&lt;<a href="https://docs.rs/proc-macro2/1.0.80/proc_macro2/struct.TokenStream.html">TokenStream</a>&gt; {
+<span class="kw">pub fn </span>impl_composite_template(input: <span class="kw-2">&amp;</span><a href="https://docs.rs/syn/2.0.60/syn/derive/struct.DeriveInput.html">syn::DeriveInput</a>) -&gt; <span class="prelude-ty">Result</span>&lt;<a href="https://docs.rs/proc-macro2/1.0.81/proc_macro2/struct.TokenStream.html">TokenStream</a>&gt; {
     <span class="kw">let </span>name = <span class="kw-2">&amp;</span><a href="#182">input</a>.ident;
     <span class="kw">let </span>crate_ident = <a href="util.rs.html#6-17">crate_ident_new</a>();
 
     <span class="kw">let </span>template = <span class="kw">match </span><a href="attribute_parser.rs.html#145-158">parse_template_source</a>(<a href="#182">input</a>) {
         <span class="prelude-val">Ok</span>(v) =&gt; <span class="prelude-val">Some</span>(<a href="#187">v</a>),
         <span class="prelude-val">Err</span>(e) =&gt; {
-            <span class="kw">return </span><span class="prelude-val">Err</span>(<a href="https://docs.rs/syn/2.0.57/syn/error/struct.Error.html#method.new">Error::new</a>(
-                <a href="https://docs.rs/proc-macro2/1.0.80/proc_macro2/struct.Span.html#method.call_site">Span::call_site</a>(),
+            <span class="kw">return </span><span class="prelude-val">Err</span>(<a href="https://docs.rs/syn/2.0.60/syn/error/struct.Error.html#method.new">Error::new</a>(
+                <a href="https://docs.rs/proc-macro2/1.0.81/proc_macro2/struct.Span.html#method.call_site">Span::call_site</a>(),
                 <a class="macro" href="https://doc.rust-lang.org/nightly/alloc/macro.format.html">format!</a>(<span class="string">"{}: derive(CompositeTemplate) requires #[template(...)] to specify 'file', 'resource', or 'string'"</span>,
                 e)
             ));
@@ -520,10 +520,10 @@
     <span class="kw">let </span>set_template = <a href="#201">source</a>.<a href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html#method.map">map</a>(|s| <a href="#16-65">gen_set_template</a>(<a href="#203">s</a>, <span class="kw-2">&amp;</span><a href="#184">crate_ident</a>));
 
     <span class="kw">let </span>fields = <span class="kw">match </span><a href="#182">input</a>.data {
-        <a href="https://docs.rs/syn/2.0.57/syn/derive/enum.Data.html#variant.Struct">Data::Struct</a>(<span class="kw-2">ref </span>s) =&gt; <span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span><a href="#206">s</a>.fields),
+        <a href="https://docs.rs/syn/2.0.60/syn/derive/enum.Data.html#variant.Struct">Data::Struct</a>(<span class="kw-2">ref </span>s) =&gt; <span class="prelude-val">Some</span>(<span class="kw-2">&amp;</span><a href="#206">s</a>.fields),
         <span class="kw">_ </span>=&gt; {
-            <span class="kw">return </span><span class="prelude-val">Err</span>(<a href="https://docs.rs/syn/2.0.57/syn/error/struct.Error.html#method.new">Error::new</a>(
-                <a href="https://docs.rs/proc-macro2/1.0.80/proc_macro2/struct.Span.html#method.call_site">Span::call_site</a>(),
+            <span class="kw">return </span><span class="prelude-val">Err</span>(<a href="https://docs.rs/syn/2.0.60/syn/error/struct.Error.html#method.new">Error::new</a>(
+                <a href="https://docs.rs/proc-macro2/1.0.81/proc_macro2/struct.Span.html#method.call_site">Span::call_site</a>(),
                 <span class="string">"derive(CompositeTemplate) only supports structs"</span>,
             ));
         }
@@ -543,7 +543,7 @@
     <span class="kw">let </span>template_children = <a href="#127-157">gen_template_child_bindings</a>(<span class="kw-2">&amp;</span><a href="#215">attributed_fields</a>);
     <span class="kw">let </span>checks = <a href="#159-180">gen_template_child_type_checks</a>(<span class="kw-2">&amp;</span><a href="#215">attributed_fields</a>);
 
-    <span class="prelude-val">Ok</span>(<a class="macro" href="https://docs.rs/quote/1.0.35/quote/macro.quote.html">quote!</a> {
+    <span class="prelude-val">Ok</span>(<a class="macro" href="https://docs.rs/quote/1.0.36/quote/macro.quote.html">quote!</a> {
         <span class="kw">impl </span>#crate_ident::subclass::widget::CompositeTemplate <span class="kw">for </span>#name {
             <span class="kw">fn </span>bind_template(klass: <span class="kw-2">&amp;mut </span><span class="self">Self</span>::Class) {
                 #set_template

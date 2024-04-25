@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gdk4/src/dmabuf_texture_builder.rs`."><title>dmabuf_texture_builder.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-081576b923113409.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gdk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0-nightly (dbce3b43b 2024-04-20)" data-channel="nightly" data-search-js="search-bf21c90c8c1d92b1.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-e32f0c247825364d.js"></script><script defer src="../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-09095024cf37855e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gdk4/src/dmabuf_texture_builder.rs`."><title>dmabuf_texture_builder.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-081576b923113409.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gdk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0-nightly (ef8b9dcf2 2024-04-24)" data-channel="nightly" data-search-js="search-bf21c90c8c1d92b1.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-e32f0c247825364d.js"></script><script defer src="../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-09095024cf37855e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -160,8 +160,6 @@
 <a href="#87" id="87">87</a>
 <a href="#88" id="88">88</a>
 <a href="#89" id="89">89</a>
-<a href="#90" id="90">90</a>
-<a href="#91" id="91">91</a>
 </pre></div><pre class="rust"><code><span class="comment">// Take a look at the license at the top of the repository in the LICENSE file.
 
 </span><span class="kw">use </span><a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/index.html">glib::translate</a>::<span class="kw-2">*</span>;
@@ -171,22 +169,20 @@
 <span class="kw">impl </span><a href="auto/dmabuf_texture_builder.rs.html#13-138">DmabufTextureBuilder</a> {
     <span class="doccomment">/// Builds a new [`Texture`][crate::Texture] with the values set up in the builder.
     ///
-    /// It is a programming error to call this function if any mandatory
-    /// property has not been set.
+    /// It is a programming error to call this function if any mandatory property has not been set.
     ///
-    /// If the dmabuf is not supported by GTK, [`None`] will be returned and @error will be set.
+    /// Not all formats defined in the `drm_fourcc.h` header are supported. You can use
+    /// [`DisplayExt::dmabuf_formats()`][crate::prelude::DisplayExt::dmabuf_formats()] to get a list of supported formats. If the
+    /// format is not supported by GTK, [`None`] will be returned and @error will be set.
     ///
     /// The `destroy` function gets called when the returned texture gets released.
-    ///
-    /// It is possible to call this function multiple times to create multiple textures,
-    /// possibly with changing properties in between.
     ///
     /// It is the responsibility of the caller to keep the file descriptors for the planes
     /// open until the created texture is no longer used, and close them afterwards (possibly
     /// using the @destroy notify).
     ///
-    /// Not all formats defined in the `drm_fourcc.h` header are supported. You can use
-    /// [`DisplayExt::dmabuf_formats()`][crate::prelude::DisplayExt::dmabuf_formats()] to get a list of supported formats.
+    /// It is possible to call this function multiple times to create multiple textures,
+    /// possibly with changing properties in between.
     ///
     /// # Returns
     ///
@@ -199,10 +195,10 @@
         <span class="kw">let </span><span class="kw-2">mut </span>error = <a href="https://doc.rust-lang.org/nightly/core/ptr/fn.null_mut.html">std::ptr::null_mut</a>();
 
         <span class="kw">let </span>result = <a href="../../gdk4_sys/fn.gdk_dmabuf_texture_builder_build.html">ffi::gdk_dmabuf_texture_builder_build</a>(
-            <a class="self" href="#34">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
+            <a class="self" href="#32">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
             <span class="prelude-val">None</span>,
             <a href="https://doc.rust-lang.org/nightly/core/ptr/fn.null_mut.html">std::ptr::null_mut</a>(),
-            <span class="kw-2">&amp;mut </span><a href="#35">error</a>,
+            <span class="kw-2">&amp;mut </span><a href="#33">error</a>,
         );
         <span class="kw">if </span>error.is_null() {
             <span class="kw">if </span>result.is_null() {
@@ -211,10 +207,10 @@
                     <span class="string">"Unsupported format"</span>,
                 ))
             } <span class="kw">else </span>{
-                <span class="prelude-val">Ok</span>(<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib_full.html">from_glib_full</a>(<a href="#37">result</a>))
+                <span class="prelude-val">Ok</span>(<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib_full.html">from_glib_full</a>(<a href="#35">result</a>))
             }
         } <span class="kw">else </span>{
-            <span class="prelude-val">Err</span>(<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib_full.html">from_glib_full</a>(<a href="#35">error</a>))
+            <span class="prelude-val">Err</span>(<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib_full.html">from_glib_full</a>(<a href="#33">error</a>))
         }
     }
 
@@ -229,15 +225,15 @@
         <span class="kw">unsafe extern </span><span class="string">"C" </span><span class="kw">fn </span>destroy_closure&lt;F: FnOnce() + <a href="https://doc.rust-lang.org/nightly/core/marker/trait.Send.html">Send</a> + <span class="lifetime">'static</span>&gt;(
             func: glib::ffi::gpointer,
         ) {
-            <span class="kw">let </span>released_func = Box::&lt;F&gt;::from_raw(<a href="#66">func</a> <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
-            <a href="#68">released_func</a>();
+            <span class="kw">let </span>released_func = Box::&lt;F&gt;::from_raw(<a href="#64">func</a> <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>);
+            <a href="#66">released_func</a>();
         }
-        <span class="kw">let </span>released_func = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box::new</a>(<a href="#62">release_func</a>);
+        <span class="kw">let </span>released_func = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box::new</a>(<a href="#60">release_func</a>);
         <span class="kw">let </span>result = <a href="../../gdk4_sys/fn.gdk_dmabuf_texture_builder_build.html">ffi::gdk_dmabuf_texture_builder_build</a>(
-            <a class="self" href="#61">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
+            <a class="self" href="#59">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
             <span class="prelude-val">Some</span>(destroy_closure::&lt;F&gt;),
-            <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box::into_raw</a>(<a href="#71">released_func</a>) <span class="kw">as </span>glib::ffi::gpointer,
-            <span class="kw-2">&amp;mut </span><a href="#64">error</a>,
+            <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box::into_raw</a>(<a href="#69">released_func</a>) <span class="kw">as </span>glib::ffi::gpointer,
+            <span class="kw-2">&amp;mut </span><a href="#62">error</a>,
         );
         <span class="kw">if </span>error.is_null() {
             <span class="kw">if </span>result.is_null() {
@@ -246,10 +242,10 @@
                     <span class="string">"Unsupported format"</span>,
                 ))
             } <span class="kw">else </span>{
-                <span class="prelude-val">Ok</span>(<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib_full.html">from_glib_full</a>(<a href="#72">result</a>))
+                <span class="prelude-val">Ok</span>(<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib_full.html">from_glib_full</a>(<a href="#70">result</a>))
             }
         } <span class="kw">else </span>{
-            <span class="prelude-val">Err</span>(<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib_full.html">from_glib_full</a>(<a href="#64">error</a>))
+            <span class="prelude-val">Err</span>(<a href="https://gtk-rs.org/gtk-rs-core/git/docs/glib/translate/fn.from_glib_full.html">from_glib_full</a>(<a href="#62">error</a>))
         }
     }
 }
