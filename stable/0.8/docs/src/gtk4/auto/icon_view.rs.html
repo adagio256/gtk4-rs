@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/icon_view.rs`."><title>icon_view.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.78.0-nightly (7d3702e47 2024-03-06)" data-channel="nightly" data-search-js="search-dd67cee4cfa65049.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-4c98445ec4002617.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-12cf3b4f4f9dc36d.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/icon_view.rs`."><title>icon_view.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-081576b923113409.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0-nightly (3a36386dc 2024-04-25)" data-channel="nightly" data-search-js="search-bf21c90c8c1d92b1.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-e32f0c247825364d.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-09095024cf37855e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,9 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><div class="src-sidebar-title">
-            <h2>Files</h2></div></nav><div class="sidebar-resizer"></div>
-    <main><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../../gtk4/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../../gtk4/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Type ‘S’ or ‘/’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings">Settings</a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
 <a href="#3" id="3">3</a>
 <a href="#4" id="4">4</a>
@@ -3510,8 +3508,8 @@
 
 </span><span class="kw">use crate</span>::{
     <a href="accessible.rs.html#19-69">Accessible</a>, <a href="enums.rs.html#922-1222">AccessibleRole</a>, <a href="adjustment.rs.html#12-97">Adjustment</a>, <a href="../enums.rs.html#77-107">Align</a>, <a href="buildable.rs.html#7-31">Buildable</a>, <a href="cell_area.rs.html#17-414">CellArea</a>, <a href="cell_layout.rs.html#10-135">CellLayout</a>, <a href="cell_renderer.rs.html#17-183">CellRenderer</a>,
-    <a href="constraint_target.rs.html#7-22">ConstraintTarget</a>, <a href="enums.rs.html#5634-5655">IconViewDropPosition</a>, <a href="layout_manager.rs.html#8-71">LayoutManager</a>, <a href="enums.rs.html#6804-6837">MovementStep</a>, <a href="enums.rs.html#7413-7422">Orientation</a>, <a href="enums.rs.html#7516-7527">Overflow</a>,
-    <a href="scrollable.rs.html#13-82">Scrollable</a>, <a href="enums.rs.html#9992-10001">ScrollablePolicy</a>, <a href="enums.rs.html#10091-10114">SelectionMode</a>, <a href="tooltip.rs.html#8-46">Tooltip</a>, <a href="tree_iter.rs.html#7-24">TreeIter</a>, <a href="tree_model.rs.html#14-276">TreeModel</a>, <a href="tree_path.rs.html#7-20">TreePath</a>, <a href="widget.rs.html#18-853">Widget</a>,
+    <a href="constraint_target.rs.html#7-22">ConstraintTarget</a>, <a href="enums.rs.html#5754-5775">IconViewDropPosition</a>, <a href="layout_manager.rs.html#8-71">LayoutManager</a>, <a href="enums.rs.html#6924-6957">MovementStep</a>, <a href="enums.rs.html#7533-7542">Orientation</a>, <a href="enums.rs.html#7636-7647">Overflow</a>,
+    <a href="scrollable.rs.html#13-82">Scrollable</a>, <a href="enums.rs.html#10112-10121">ScrollablePolicy</a>, <a href="enums.rs.html#10211-10234">SelectionMode</a>, <a href="tooltip.rs.html#8-46">Tooltip</a>, <a href="tree_iter.rs.html#7-24">TreeIter</a>, <a href="tree_model.rs.html#14-276">TreeModel</a>, <a href="tree_path.rs.html#7-20">TreePath</a>, <a href="widget.rs.html#18-853">Widget</a>,
 };
 <span class="kw">use </span>glib::{
     <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/prelude/index.html">prelude</a>::<span class="kw-2">*</span>,
@@ -4565,7 +4563,7 @@
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         drag_x: <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
         drag_y: <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
-    ) -&gt; <span class="prelude-ty">Option</span>&lt;(<a href="tree_path.rs.html#7-20">TreePath</a>, <a href="enums.rs.html#5634-5655">IconViewDropPosition</a>)&gt; {
+    ) -&gt; <span class="prelude-ty">Option</span>&lt;(<a href="tree_path.rs.html#7-20">TreePath</a>, <a href="enums.rs.html#5754-5775">IconViewDropPosition</a>)&gt; {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>path = <a href="https://doc.rust-lang.org/nightly/core/ptr/fn.null_mut.html">std::ptr::null_mut</a>();
             <span class="kw">let </span><span class="kw-2">mut </span>pos = <a href="https://doc.rust-lang.org/nightly/core/mem/maybe_uninit/union.MaybeUninit.html#method.uninit">std::mem::MaybeUninit::uninit</a>();
@@ -4603,7 +4601,7 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">"gtk_icon_view_get_drag_dest_item"</span>)]
     #[doc(alias = <span class="string">"get_drag_dest_item"</span>)]
-    </span><span class="kw">pub fn </span>drag_dest_item(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (<span class="prelude-ty">Option</span>&lt;<a href="tree_path.rs.html#7-20">TreePath</a>&gt;, <a href="enums.rs.html#5634-5655">IconViewDropPosition</a>) {
+    </span><span class="kw">pub fn </span>drag_dest_item(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; (<span class="prelude-ty">Option</span>&lt;<a href="tree_path.rs.html#7-20">TreePath</a>&gt;, <a href="enums.rs.html#5754-5775">IconViewDropPosition</a>) {
         <span class="kw">unsafe </span>{
             <span class="kw">let </span><span class="kw-2">mut </span>path = <a href="https://doc.rust-lang.org/nightly/core/ptr/fn.null_mut.html">std::ptr::null_mut</a>();
             <span class="kw">let </span><span class="kw-2">mut </span>pos = <a href="https://doc.rust-lang.org/nightly/core/mem/maybe_uninit/union.MaybeUninit.html#method.uninit">std::mem::MaybeUninit::uninit</a>();
@@ -4698,7 +4696,7 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">"gtk_icon_view_get_item_orientation"</span>)]
     #[doc(alias = <span class="string">"get_item_orientation"</span>)]
-    </span><span class="kw">pub fn </span>item_orientation(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="enums.rs.html#7413-7422">Orientation</a> {
+    </span><span class="kw">pub fn </span>item_orientation(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="enums.rs.html#7533-7542">Orientation</a> {
         <span class="kw">unsafe </span>{
             <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib.html">from_glib</a>(<a href="../../../gtk4_sys/fn.gtk_icon_view_get_item_orientation.html">ffi::gtk_icon_view_get_item_orientation</a>(
                 <a class="self" href="#1196">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
@@ -4950,7 +4948,7 @@
     #[allow(deprecated)]
     #[doc(alias = <span class="string">"gtk_icon_view_get_selection_mode"</span>)]
     #[doc(alias = <span class="string">"get_selection_mode"</span>)]
-    </span><span class="kw">pub fn </span>selection_mode(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="enums.rs.html#10091-10114">SelectionMode</a> {
+    </span><span class="kw">pub fn </span>selection_mode(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="enums.rs.html#10211-10234">SelectionMode</a> {
         <span class="kw">unsafe </span>{ <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib.html">from_glib</a>(<a href="../../../gtk4_sys/fn.gtk_icon_view_get_selection_mode.html">ffi::gtk_icon_view_get_selection_mode</a>(<a class="self" href="#1448">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>)) }
     }
 
@@ -5368,7 +5366,7 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">"v4_10"</span>, deprecated = <span class="string">"Since 4.10"</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">"gtk_icon_view_set_drag_dest_item"</span>)]
-    </span><span class="kw">pub fn </span>set_drag_dest_item(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><a href="tree_path.rs.html#7-20">TreePath</a>&gt;, pos: <a href="enums.rs.html#5634-5655">IconViewDropPosition</a>) {
+    </span><span class="kw">pub fn </span>set_drag_dest_item(<span class="kw-2">&amp;</span><span class="self">self</span>, path: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><a href="tree_path.rs.html#7-20">TreePath</a>&gt;, pos: <a href="enums.rs.html#5754-5775">IconViewDropPosition</a>) {
         <span class="kw">unsafe </span>{
             <a href="../../../gtk4_sys/fn.gtk_icon_view_set_drag_dest_item.html">ffi::gtk_icon_view_set_drag_dest_item</a>(
                 <a class="self" href="#1866">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
@@ -5389,7 +5387,7 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">"v4_10"</span>, deprecated = <span class="string">"Since 4.10"</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">"gtk_icon_view_set_item_orientation"</span>)]
-    </span><span class="kw">pub fn </span>set_item_orientation(<span class="kw-2">&amp;</span><span class="self">self</span>, orientation: <a href="enums.rs.html#7413-7422">Orientation</a>) {
+    </span><span class="kw">pub fn </span>set_item_orientation(<span class="kw-2">&amp;</span><span class="self">self</span>, orientation: <a href="enums.rs.html#7533-7542">Orientation</a>) {
         <span class="kw">unsafe </span>{
             <a href="../../../gtk4_sys/fn.gtk_icon_view_set_item_orientation.html">ffi::gtk_icon_view_set_item_orientation</a>(<a class="self" href="#1887">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#1887">orientation</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.IntoGlib.html#tymethod.into_glib">into_glib</a>());
         }
@@ -5560,7 +5558,7 @@
     </span><span class="attr">#[cfg_attr(feature = <span class="string">"v4_10"</span>, deprecated = <span class="string">"Since 4.10"</span>)]
     #[allow(deprecated)]
     #[doc(alias = <span class="string">"gtk_icon_view_set_selection_mode"</span>)]
-    </span><span class="kw">pub fn </span>set_selection_mode(<span class="kw-2">&amp;</span><span class="self">self</span>, mode: <a href="enums.rs.html#10091-10114">SelectionMode</a>) {
+    </span><span class="kw">pub fn </span>set_selection_mode(<span class="kw-2">&amp;</span><span class="self">self</span>, mode: <a href="enums.rs.html#10211-10234">SelectionMode</a>) {
         <span class="kw">unsafe </span>{
             <a href="../../../gtk4_sys/fn.gtk_icon_view_set_selection_mode.html">ffi::gtk_icon_view_set_selection_mode</a>(<a class="self" href="#2058">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#2058">mode</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.IntoGlib.html#tymethod.into_glib">into_glib</a>());
         }
@@ -5851,12 +5849,12 @@
     /// ## `modify`
     /// whether to modify the selection
     </span><span class="attr">#[doc(alias = <span class="string">"move-cursor"</span>)]
-    </span><span class="kw">pub fn </span>connect_move_cursor&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <a href="enums.rs.html#6804-6837">MovementStep</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> + <span class="lifetime">'static</span>&gt;(
+    </span><span class="kw">pub fn </span>connect_move_cursor&lt;F: Fn(<span class="kw-2">&amp;</span><span class="self">Self</span>, <a href="enums.rs.html#6924-6957">MovementStep</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> + <span class="lifetime">'static</span>&gt;(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
         f: F,
     ) -&gt; <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/signal/struct.SignalHandlerId.html">SignalHandlerId</a> {
         <span class="kw">unsafe extern </span><span class="string">"C" </span><span class="kw">fn </span>move_cursor_trampoline&lt;
-            F: Fn(<span class="kw-2">&amp;</span><a href="#18-736">IconView</a>, <a href="enums.rs.html#6804-6837">MovementStep</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> + <span class="lifetime">'static</span>,
+            F: Fn(<span class="kw-2">&amp;</span><a href="#18-736">IconView</a>, <a href="enums.rs.html#6924-6957">MovementStep</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>, <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> + <span class="lifetime">'static</span>,
         &gt;(
             this: <span class="kw-2">*mut </span><a href="../../../gtk4_sys/struct.GtkIconView.html">ffi::GtkIconView</a>,
             step: <a href="../../../gtk4_sys/type.GtkMovementStep.html">ffi::GtkMovementStep</a>,
@@ -5890,7 +5888,7 @@
 
     <span class="kw">pub fn </span>emit_move_cursor(
         <span class="kw-2">&amp;</span><span class="self">self</span>,
-        step: <a href="enums.rs.html#6804-6837">MovementStep</a>,
+        step: <a href="enums.rs.html#6924-6957">MovementStep</a>,
         count: <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>,
         extend: <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
         modify: <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>,
@@ -6498,7 +6496,7 @@
 
     <span class="doccomment">/// The item-orientation property specifies how the cells (i.e. the icon and
     /// the text) of the item are positioned relative to each other.
-    </span><span class="kw">pub fn </span>item_orientation(<span class="self">self</span>, item_orientation: <a href="enums.rs.html#7413-7422">Orientation</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>item_orientation(<span class="self">self</span>, item_orientation: <a href="enums.rs.html#7533-7542">Orientation</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#2996">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"item-orientation"</span>, <a href="#2996">item_orientation</a>),
         }
@@ -6575,7 +6573,7 @@
     <span class="doccomment">/// The ::selection-mode property specifies the selection mode of
     /// icon view. If the mode is [`SelectionMode::Multiple`][crate::SelectionMode::Multiple], rubberband selection
     /// is enabled, for the other modes, only keyboard selection is possible.
-    </span><span class="kw">pub fn </span>selection_mode(<span class="self">self</span>, selection_mode: <a href="enums.rs.html#10091-10114">SelectionMode</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>selection_mode(<span class="self">self</span>, selection_mode: <a href="enums.rs.html#10211-10234">SelectionMode</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#3073">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"selection-mode"</span>, <a href="#3073">selection_mode</a>),
         }
@@ -6785,7 +6783,7 @@
     ///
     /// This property is meant to be set by widget implementations,
     /// typically in their instance init function.
-    </span><span class="kw">pub fn </span>overflow(<span class="self">self</span>, overflow: <a href="enums.rs.html#7516-7527">Overflow</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>overflow(<span class="self">self</span>, overflow: <a href="enums.rs.html#7636-7647">Overflow</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#3283">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"overflow"</span>, <a href="#3283">overflow</a>),
         }
@@ -6902,7 +6900,7 @@
     }
 
     <span class="doccomment">/// Determines when horizontal scrolling should start.
-    </span><span class="kw">pub fn </span>hscroll_policy(<span class="self">self</span>, hscroll_policy: <a href="enums.rs.html#9992-10001">ScrollablePolicy</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>hscroll_policy(<span class="self">self</span>, hscroll_policy: <a href="enums.rs.html#10112-10121">ScrollablePolicy</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#3400">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"hscroll-policy"</span>, <a href="#3400">hscroll_policy</a>),
         }
@@ -6920,7 +6918,7 @@
     }
 
     <span class="doccomment">/// Determines when vertical scrolling should start.
-    </span><span class="kw">pub fn </span>vscroll_policy(<span class="self">self</span>, vscroll_policy: <a href="enums.rs.html#9992-10001">ScrollablePolicy</a>) -&gt; <span class="self">Self </span>{
+    </span><span class="kw">pub fn </span>vscroll_policy(<span class="self">self</span>, vscroll_policy: <a href="enums.rs.html#10112-10121">ScrollablePolicy</a>) -&gt; <span class="self">Self </span>{
         <span class="self">Self </span>{
             builder: <a class="self" href="#3418">self</a>.builder.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/struct.ObjectBuilder.html#method.property">property</a>(<span class="string">"vscroll-policy"</span>, <a href="#3418">vscroll_policy</a>),
         }

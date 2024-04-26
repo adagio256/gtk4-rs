@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gdk4/src/auto/dmabuf_texture_builder.rs`."><title>dmabuf_texture_builder.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gdk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.78.0-nightly (7d3702e47 2024-03-06)" data-channel="nightly" data-search-js="search-dd67cee4cfa65049.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-4c98445ec4002617.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-12cf3b4f4f9dc36d.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gdk4/src/auto/dmabuf_texture_builder.rs`."><title>dmabuf_texture_builder.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-081576b923113409.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gdk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0-nightly (3a36386dc 2024-04-25)" data-channel="nightly" data-search-js="search-bf21c90c8c1d92b1.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-e32f0c247825364d.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-09095024cf37855e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,9 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><div class="src-sidebar-title">
-            <h2>Files</h2></div></nav><div class="sidebar-resizer"></div>
-    <main><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../../gdk4/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../../gdk4/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Type ‘S’ or ‘/’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings">Settings</a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
 <a href="#3" id="3">3</a>
 <a href="#4" id="4">4</a>
@@ -790,11 +788,6 @@
 <a href="#715" id="715">715</a>
 <a href="#716" id="716">716</a>
 <a href="#717" id="717">717</a>
-<a href="#718" id="718">718</a>
-<a href="#719" id="719">719</a>
-<a href="#720" id="720">720</a>
-<a href="#721" id="721">721</a>
-<a href="#722" id="722">722</a>
 </pre></div><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -846,7 +839,7 @@
     /// GTK tries to accommodate this situation by accepting `DMA_FORMAT_MOD_INVALID` as modifier.
     ///
     /// The operation of [`DmabufTextureBuilder`][crate::DmabufTextureBuilder] is quite simple: Create a texture builder,
-    /// set all the necessary properties, and then call `Gdk::DmabufTextureBuilder::build()`
+    /// set all the necessary properties, and then call [`build()`][Self::build()]
     /// to create the new texture.
     ///
     /// The required properties for a dma-buf texture are
@@ -946,12 +939,7 @@
         <span class="kw">unsafe </span>{ <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_full.html">from_glib_full</a>(<a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_new.html">ffi::gdk_dmabuf_texture_builder_new</a>()) }
     }
 
-    <span class="comment">//#[doc(alias = "gdk_dmabuf_texture_builder_build")]
-    //pub fn build(&amp;self, data: /*Unimplemented*/Option&lt;Basic: Pointer&gt;) -&gt; Result&lt;Option&lt;Texture&gt;, glib::Error&gt; {
-    //    unsafe { TODO: call ffi:gdk_dmabuf_texture_builder_build() }
-    //}
-
-    </span><span class="doccomment">/// Returns the display that this texture builder is
+    <span class="doccomment">/// Returns the display that this texture builder is
     /// associated with.
     ///
     /// # Returns
@@ -962,7 +950,7 @@
     </span><span class="kw">pub fn </span>display(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="display.rs.html#20-109">Display</a> {
         <span class="kw">unsafe </span>{
             <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_none.html">from_glib_none</a>(<a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_display.html">ffi::gdk_dmabuf_texture_builder_get_display</a>(
-                <a class="self" href="#165">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
+                <a class="self" href="#160">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
             ))
         }
     }
@@ -977,7 +965,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_get_fd"</span>)]
     #[doc(alias = <span class="string">"get_fd"</span>)]
     </span><span class="kw">pub fn </span>fd(<span class="kw-2">&amp;</span><span class="self">self</span>, plane: <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a> {
-        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_fd.html">ffi::gdk_dmabuf_texture_builder_get_fd</a>(<a class="self" href="#182">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#182">plane</a>) }
+        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_fd.html">ffi::gdk_dmabuf_texture_builder_get_fd</a>(<a class="self" href="#177">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#177">plane</a>) }
     }
 
     <span class="doccomment">/// Gets the format previously set via gdk_dmabuf_texture_builder_set_fourcc()
@@ -991,7 +979,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_get_fourcc"</span>)]
     #[doc(alias = <span class="string">"get_fourcc"</span>)]
     </span><span class="kw">pub fn </span>fourcc(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a> {
-        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_fourcc.html">ffi::gdk_dmabuf_texture_builder_get_fourcc</a>(<a class="self" href="#196">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>) }
+        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_fourcc.html">ffi::gdk_dmabuf_texture_builder_get_fourcc</a>(<a class="self" href="#191">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>) }
     }
 
     <span class="doccomment">/// Gets the height previously set via gdk_dmabuf_texture_builder_set_height() or
@@ -1003,7 +991,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_get_height"</span>)]
     #[doc(alias = <span class="string">"get_height"</span>)]
     </span><span class="kw">pub fn </span>height(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a> {
-        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_height.html">ffi::gdk_dmabuf_texture_builder_get_height</a>(<a class="self" href="#208">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>) }
+        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_height.html">ffi::gdk_dmabuf_texture_builder_get_height</a>(<a class="self" href="#203">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>) }
     }
 
     <span class="doccomment">/// Gets the modifier value.
@@ -1014,7 +1002,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_get_modifier"</span>)]
     #[doc(alias = <span class="string">"get_modifier"</span>)]
     </span><span class="kw">pub fn </span>modifier(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a> {
-        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_modifier.html">ffi::gdk_dmabuf_texture_builder_get_modifier</a>(<a class="self" href="#219">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>) }
+        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_modifier.html">ffi::gdk_dmabuf_texture_builder_get_modifier</a>(<a class="self" href="#214">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>) }
     }
 
     <span class="doccomment">/// Gets the number of planes.
@@ -1025,7 +1013,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_get_n_planes"</span>)]
     #[doc(alias = <span class="string">"get_n_planes"</span>)]
     </span><span class="kw">pub fn </span>n_planes(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a> {
-        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_n_planes.html">ffi::gdk_dmabuf_texture_builder_get_n_planes</a>(<a class="self" href="#230">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>) }
+        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_n_planes.html">ffi::gdk_dmabuf_texture_builder_get_n_planes</a>(<a class="self" href="#225">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>) }
     }
 
     <span class="doccomment">/// Gets the offset value for a plane.
@@ -1038,7 +1026,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_get_offset"</span>)]
     #[doc(alias = <span class="string">"get_offset"</span>)]
     </span><span class="kw">pub fn </span>offset(<span class="kw-2">&amp;</span><span class="self">self</span>, plane: <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a> {
-        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_offset.html">ffi::gdk_dmabuf_texture_builder_get_offset</a>(<a class="self" href="#243">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#243">plane</a>) }
+        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_offset.html">ffi::gdk_dmabuf_texture_builder_get_offset</a>(<a class="self" href="#238">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#238">plane</a>) }
     }
 
     <span class="doccomment">/// Whether the data is premultiplied.
@@ -1051,7 +1039,7 @@
     </span><span class="kw">pub fn </span>is_premultiplied(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a> {
         <span class="kw">unsafe </span>{
             <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib.html">from_glib</a>(<a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_premultiplied.html">ffi::gdk_dmabuf_texture_builder_get_premultiplied</a>(
-                <a class="self" href="#254">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
+                <a class="self" href="#249">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
             ))
         }
     }
@@ -1066,7 +1054,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_get_stride"</span>)]
     #[doc(alias = <span class="string">"get_stride"</span>)]
     </span><span class="kw">pub fn </span>stride(<span class="kw-2">&amp;</span><span class="self">self</span>, plane: <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a> {
-        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_stride.html">ffi::gdk_dmabuf_texture_builder_get_stride</a>(<a class="self" href="#271">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#271">plane</a>) }
+        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_stride.html">ffi::gdk_dmabuf_texture_builder_get_stride</a>(<a class="self" href="#266">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#266">plane</a>) }
     }
 
     <span class="doccomment">/// Gets the region previously set via gdk_dmabuf_texture_builder_set_update_region() or
@@ -1080,7 +1068,7 @@
     </span><span class="kw">pub fn </span>update_region(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/cairo/region/struct.Region.html">cairo::Region</a>&gt; {
         <span class="kw">unsafe </span>{
             <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_none.html">from_glib_none</a>(<a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_update_region.html">ffi::gdk_dmabuf_texture_builder_get_update_region</a>(
-                <a class="self" href="#283">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
+                <a class="self" href="#278">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
             ))
         }
     }
@@ -1096,7 +1084,7 @@
     </span><span class="kw">pub fn </span>update_texture(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <span class="prelude-ty">Option</span>&lt;<a href="texture.rs.html#11-53">Texture</a>&gt; {
         <span class="kw">unsafe </span>{
             <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_none.html">from_glib_none</a>(<a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_update_texture.html">ffi::gdk_dmabuf_texture_builder_get_update_texture</a>(
-                <a class="self" href="#299">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
+                <a class="self" href="#294">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
             ))
         }
     }
@@ -1110,7 +1098,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_get_width"</span>)]
     #[doc(alias = <span class="string">"get_width"</span>)]
     </span><span class="kw">pub fn </span>width(<span class="kw-2">&amp;</span><span class="self">self</span>) -&gt; <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a> {
-        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_width.html">ffi::gdk_dmabuf_texture_builder_get_width</a>(<a class="self" href="#315">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>) }
+        <span class="kw">unsafe </span>{ <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_get_width.html">ffi::gdk_dmabuf_texture_builder_get_width</a>(<a class="self" href="#310">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>) }
     }
 
     <span class="doccomment">/// Sets the display that this texture builder is
@@ -1124,8 +1112,8 @@
     </span><span class="kw">pub fn </span>set_display(<span class="kw-2">&amp;</span><span class="self">self</span>, display: <span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="display.rs.html#20-109">Display</a>&gt;) {
         <span class="kw">unsafe </span>{
             <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_display.html">ffi::gdk_dmabuf_texture_builder_set_display</a>(
-                <a class="self" href="#327">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
-                <a href="#327">display</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
+                <a class="self" href="#322">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
+                <a href="#322">display</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>().<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
             );
         }
     }
@@ -1138,7 +1126,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_set_fd"</span>)]
     </span><span class="kw">pub fn </span>set_fd(<span class="kw-2">&amp;</span><span class="self">self</span>, plane: <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, fd: <a href="https://doc.rust-lang.org/nightly/std/primitive.i32.html">i32</a>) {
         <span class="kw">unsafe </span>{
-            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_fd.html">ffi::gdk_dmabuf_texture_builder_set_fd</a>(<a class="self" href="#342">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#342">plane</a>, <a href="#342">fd</a>);
+            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_fd.html">ffi::gdk_dmabuf_texture_builder_set_fd</a>(<a class="self" href="#337">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#337">plane</a>, <a href="#337">fd</a>);
         }
     }
 
@@ -1152,7 +1140,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_set_fourcc"</span>)]
     </span><span class="kw">pub fn </span>set_fourcc(<span class="kw-2">&amp;</span><span class="self">self</span>, fourcc: <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) {
         <span class="kw">unsafe </span>{
-            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_fourcc.html">ffi::gdk_dmabuf_texture_builder_set_fourcc</a>(<a class="self" href="#356">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#356">fourcc</a>);
+            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_fourcc.html">ffi::gdk_dmabuf_texture_builder_set_fourcc</a>(<a class="self" href="#351">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#351">fourcc</a>);
         }
     }
 
@@ -1164,7 +1152,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_set_height"</span>)]
     </span><span class="kw">pub fn </span>set_height(<span class="kw-2">&amp;</span><span class="self">self</span>, height: <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) {
         <span class="kw">unsafe </span>{
-            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_height.html">ffi::gdk_dmabuf_texture_builder_set_height</a>(<a class="self" href="#368">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#368">height</a>);
+            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_height.html">ffi::gdk_dmabuf_texture_builder_set_height</a>(<a class="self" href="#363">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#363">height</a>);
         }
     }
 
@@ -1174,7 +1162,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_set_modifier"</span>)]
     </span><span class="kw">pub fn </span>set_modifier(<span class="kw-2">&amp;</span><span class="self">self</span>, modifier: <a href="https://doc.rust-lang.org/nightly/std/primitive.u64.html">u64</a>) {
         <span class="kw">unsafe </span>{
-            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_modifier.html">ffi::gdk_dmabuf_texture_builder_set_modifier</a>(<a class="self" href="#378">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#378">modifier</a>);
+            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_modifier.html">ffi::gdk_dmabuf_texture_builder_set_modifier</a>(<a class="self" href="#373">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#373">modifier</a>);
         }
     }
 
@@ -1184,7 +1172,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_set_n_planes"</span>)]
     </span><span class="kw">pub fn </span>set_n_planes(<span class="kw-2">&amp;</span><span class="self">self</span>, n_planes: <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) {
         <span class="kw">unsafe </span>{
-            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_n_planes.html">ffi::gdk_dmabuf_texture_builder_set_n_planes</a>(<a class="self" href="#388">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#388">n_planes</a>);
+            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_n_planes.html">ffi::gdk_dmabuf_texture_builder_set_n_planes</a>(<a class="self" href="#383">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#383">n_planes</a>);
         }
     }
 
@@ -1196,7 +1184,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_set_offset"</span>)]
     </span><span class="kw">pub fn </span>set_offset(<span class="kw-2">&amp;</span><span class="self">self</span>, plane: <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, offset: <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) {
         <span class="kw">unsafe </span>{
-            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_offset.html">ffi::gdk_dmabuf_texture_builder_set_offset</a>(<a class="self" href="#400">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#400">plane</a>, <a href="#400">offset</a>);
+            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_offset.html">ffi::gdk_dmabuf_texture_builder_set_offset</a>(<a class="self" href="#395">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#395">plane</a>, <a href="#395">offset</a>);
         }
     }
 
@@ -1210,8 +1198,8 @@
     </span><span class="kw">pub fn </span>set_premultiplied(<span class="kw-2">&amp;</span><span class="self">self</span>, premultiplied: <a href="https://doc.rust-lang.org/nightly/std/primitive.bool.html">bool</a>) {
         <span class="kw">unsafe </span>{
             <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_premultiplied.html">ffi::gdk_dmabuf_texture_builder_set_premultiplied</a>(
-                <a class="self" href="#413">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
-                <a href="#413">premultiplied</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.IntoGlib.html#tymethod.into_glib">into_glib</a>(),
+                <a class="self" href="#408">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
+                <a href="#408">premultiplied</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.IntoGlib.html#tymethod.into_glib">into_glib</a>(),
             );
         }
     }
@@ -1226,7 +1214,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_set_stride"</span>)]
     </span><span class="kw">pub fn </span>set_stride(<span class="kw-2">&amp;</span><span class="self">self</span>, plane: <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>, stride: <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) {
         <span class="kw">unsafe </span>{
-            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_stride.html">ffi::gdk_dmabuf_texture_builder_set_stride</a>(<a class="self" href="#430">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#430">plane</a>, <a href="#430">stride</a>);
+            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_stride.html">ffi::gdk_dmabuf_texture_builder_set_stride</a>(<a class="self" href="#425">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#425">plane</a>, <a href="#425">stride</a>);
         }
     }
 
@@ -1246,8 +1234,8 @@
     </span><span class="kw">pub fn </span>set_update_region(<span class="kw-2">&amp;</span><span class="self">self</span>, region: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/cairo/region/struct.Region.html">cairo::Region</a>&gt;) {
         <span class="kw">unsafe </span>{
             <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_update_region.html">ffi::gdk_dmabuf_texture_builder_set_update_region</a>(
-                <a class="self" href="#449">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
-                <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.mut_override.html">mut_override</a>(<a href="#449">region</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>),
+                <a class="self" href="#444">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
+                <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.mut_override.html">mut_override</a>(<a href="#444">region</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>),
             );
         }
     }
@@ -1260,8 +1248,8 @@
     </span><span class="kw">pub fn </span>set_update_texture(<span class="kw-2">&amp;</span><span class="self">self</span>, texture: <span class="prelude-ty">Option</span>&lt;<span class="kw-2">&amp;</span><span class="kw">impl </span>IsA&lt;<a href="texture.rs.html#11-53">Texture</a>&gt;&gt;) {
         <span class="kw">unsafe </span>{
             <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_update_texture.html">ffi::gdk_dmabuf_texture_builder_set_update_texture</a>(
-                <a class="self" href="#463">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
-                <a href="#463">texture</a>.<a href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html#method.map">map</a>(|p| <a href="#467">p</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>()).<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
+                <a class="self" href="#458">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
+                <a href="#458">texture</a>.<a href="https://doc.rust-lang.org/nightly/core/option/enum.Option.html#method.map">map</a>(|p| <a href="#462">p</a>.<a href="https://doc.rust-lang.org/nightly/core/convert/trait.AsRef.html#tymethod.as_ref">as_ref</a>()).<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>,
             );
         }
     }
@@ -1274,7 +1262,7 @@
     </span><span class="attr">#[doc(alias = <span class="string">"gdk_dmabuf_texture_builder_set_width"</span>)]
     </span><span class="kw">pub fn </span>set_width(<span class="kw-2">&amp;</span><span class="self">self</span>, width: <a href="https://doc.rust-lang.org/nightly/std/primitive.u32.html">u32</a>) {
         <span class="kw">unsafe </span>{
-            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_width.html">ffi::gdk_dmabuf_texture_builder_set_width</a>(<a class="self" href="#478">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#478">width</a>);
+            <a href="../../../gdk4_sys/fn.gdk_dmabuf_texture_builder_set_width.html">ffi::gdk_dmabuf_texture_builder_set_width</a>(<a class="self" href="#473">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/trait.ToGlibPtr.html#tymethod.to_glib_none">to_glib_none</a>().<span class="number">0</span>, <a href="#473">width</a>);
         }
     }
 
@@ -1287,18 +1275,18 @@
             _param_spec: glib::ffi::gpointer,
             f: glib::ffi::gpointer,
         ) {
-            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#491">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
-            <a href="#493">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#489">this</a>))
+            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#486">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
+            <a href="#488">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#484">this</a>))
         }
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#487">f</a>);
+            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#482">f</a>);
             <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/signal/fn.connect_raw.html">connect_raw</a>(
-                <a class="self" href="#487">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+                <a class="self" href="#482">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 <span class="string">b"notify::display\0"</span>.<a href="https://doc.rust-lang.org/nightly/core/foreigntype.slice.html#method.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
                 <span class="prelude-val">Some</span>(std::mem::transmute::&lt;<span class="kw">_</span>, <span class="kw">unsafe extern </span><span class="string">"C" </span><span class="kw">fn</span>()&gt;(
                     notify_display_trampoline::&lt;F&gt; <span class="kw">as </span><span class="kw-2">*const </span>(),
                 )),
-                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#497">f</a>),
+                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#492">f</a>),
             )
         }
     }
@@ -1312,18 +1300,18 @@
             _param_spec: glib::ffi::gpointer,
             f: glib::ffi::gpointer,
         ) {
-            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#516">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
-            <a href="#518">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#514">this</a>))
+            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#511">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
+            <a href="#513">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#509">this</a>))
         }
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#512">f</a>);
+            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#507">f</a>);
             <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/signal/fn.connect_raw.html">connect_raw</a>(
-                <a class="self" href="#512">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+                <a class="self" href="#507">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 <span class="string">b"notify::fourcc\0"</span>.<a href="https://doc.rust-lang.org/nightly/core/foreigntype.slice.html#method.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
                 <span class="prelude-val">Some</span>(std::mem::transmute::&lt;<span class="kw">_</span>, <span class="kw">unsafe extern </span><span class="string">"C" </span><span class="kw">fn</span>()&gt;(
                     notify_fourcc_trampoline::&lt;F&gt; <span class="kw">as </span><span class="kw-2">*const </span>(),
                 )),
-                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#522">f</a>),
+                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#517">f</a>),
             )
         }
     }
@@ -1337,18 +1325,18 @@
             _param_spec: glib::ffi::gpointer,
             f: glib::ffi::gpointer,
         ) {
-            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#541">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
-            <a href="#543">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#539">this</a>))
+            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#536">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
+            <a href="#538">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#534">this</a>))
         }
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#537">f</a>);
+            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#532">f</a>);
             <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/signal/fn.connect_raw.html">connect_raw</a>(
-                <a class="self" href="#537">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+                <a class="self" href="#532">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 <span class="string">b"notify::height\0"</span>.<a href="https://doc.rust-lang.org/nightly/core/foreigntype.slice.html#method.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
                 <span class="prelude-val">Some</span>(std::mem::transmute::&lt;<span class="kw">_</span>, <span class="kw">unsafe extern </span><span class="string">"C" </span><span class="kw">fn</span>()&gt;(
                     notify_height_trampoline::&lt;F&gt; <span class="kw">as </span><span class="kw-2">*const </span>(),
                 )),
-                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#547">f</a>),
+                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#542">f</a>),
             )
         }
     }
@@ -1362,18 +1350,18 @@
             _param_spec: glib::ffi::gpointer,
             f: glib::ffi::gpointer,
         ) {
-            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#566">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
-            <a href="#568">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#564">this</a>))
+            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#561">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
+            <a href="#563">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#559">this</a>))
         }
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#562">f</a>);
+            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#557">f</a>);
             <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/signal/fn.connect_raw.html">connect_raw</a>(
-                <a class="self" href="#562">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+                <a class="self" href="#557">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 <span class="string">b"notify::modifier\0"</span>.<a href="https://doc.rust-lang.org/nightly/core/foreigntype.slice.html#method.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
                 <span class="prelude-val">Some</span>(std::mem::transmute::&lt;<span class="kw">_</span>, <span class="kw">unsafe extern </span><span class="string">"C" </span><span class="kw">fn</span>()&gt;(
                     notify_modifier_trampoline::&lt;F&gt; <span class="kw">as </span><span class="kw-2">*const </span>(),
                 )),
-                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#572">f</a>),
+                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#567">f</a>),
             )
         }
     }
@@ -1387,18 +1375,18 @@
             _param_spec: glib::ffi::gpointer,
             f: glib::ffi::gpointer,
         ) {
-            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#591">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
-            <a href="#593">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#589">this</a>))
+            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#586">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
+            <a href="#588">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#584">this</a>))
         }
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#587">f</a>);
+            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#582">f</a>);
             <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/signal/fn.connect_raw.html">connect_raw</a>(
-                <a class="self" href="#587">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+                <a class="self" href="#582">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 <span class="string">b"notify::n-planes\0"</span>.<a href="https://doc.rust-lang.org/nightly/core/foreigntype.slice.html#method.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
                 <span class="prelude-val">Some</span>(std::mem::transmute::&lt;<span class="kw">_</span>, <span class="kw">unsafe extern </span><span class="string">"C" </span><span class="kw">fn</span>()&gt;(
                     notify_n_planes_trampoline::&lt;F&gt; <span class="kw">as </span><span class="kw-2">*const </span>(),
                 )),
-                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#597">f</a>),
+                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#592">f</a>),
             )
         }
     }
@@ -1414,18 +1402,18 @@
             _param_spec: glib::ffi::gpointer,
             f: glib::ffi::gpointer,
         ) {
-            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#618">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
-            <a href="#620">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#616">this</a>))
+            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#613">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
+            <a href="#615">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#611">this</a>))
         }
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#612">f</a>);
+            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#607">f</a>);
             <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/signal/fn.connect_raw.html">connect_raw</a>(
-                <a class="self" href="#612">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+                <a class="self" href="#607">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 <span class="string">b"notify::premultiplied\0"</span>.<a href="https://doc.rust-lang.org/nightly/core/foreigntype.slice.html#method.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
                 <span class="prelude-val">Some</span>(std::mem::transmute::&lt;<span class="kw">_</span>, <span class="kw">unsafe extern </span><span class="string">"C" </span><span class="kw">fn</span>()&gt;(
                     notify_premultiplied_trampoline::&lt;F&gt; <span class="kw">as </span><span class="kw-2">*const </span>(),
                 )),
-                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#624">f</a>),
+                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#619">f</a>),
             )
         }
     }
@@ -1441,18 +1429,18 @@
             _param_spec: glib::ffi::gpointer,
             f: glib::ffi::gpointer,
         ) {
-            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#645">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
-            <a href="#647">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#643">this</a>))
+            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#640">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
+            <a href="#642">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#638">this</a>))
         }
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#639">f</a>);
+            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#634">f</a>);
             <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/signal/fn.connect_raw.html">connect_raw</a>(
-                <a class="self" href="#639">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+                <a class="self" href="#634">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 <span class="string">b"notify::update-region\0"</span>.<a href="https://doc.rust-lang.org/nightly/core/foreigntype.slice.html#method.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
                 <span class="prelude-val">Some</span>(std::mem::transmute::&lt;<span class="kw">_</span>, <span class="kw">unsafe extern </span><span class="string">"C" </span><span class="kw">fn</span>()&gt;(
                     notify_update_region_trampoline::&lt;F&gt; <span class="kw">as </span><span class="kw-2">*const </span>(),
                 )),
-                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#651">f</a>),
+                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#646">f</a>),
             )
         }
     }
@@ -1468,18 +1456,18 @@
             _param_spec: glib::ffi::gpointer,
             f: glib::ffi::gpointer,
         ) {
-            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#672">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
-            <a href="#674">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#670">this</a>))
+            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#667">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
+            <a href="#669">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#665">this</a>))
         }
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#666">f</a>);
+            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#661">f</a>);
             <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/signal/fn.connect_raw.html">connect_raw</a>(
-                <a class="self" href="#666">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+                <a class="self" href="#661">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 <span class="string">b"notify::update-texture\0"</span>.<a href="https://doc.rust-lang.org/nightly/core/foreigntype.slice.html#method.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
                 <span class="prelude-val">Some</span>(std::mem::transmute::&lt;<span class="kw">_</span>, <span class="kw">unsafe extern </span><span class="string">"C" </span><span class="kw">fn</span>()&gt;(
                     notify_update_texture_trampoline::&lt;F&gt; <span class="kw">as </span><span class="kw-2">*const </span>(),
                 )),
-                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#678">f</a>),
+                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#673">f</a>),
             )
         }
     }
@@ -1493,18 +1481,18 @@
             _param_spec: glib::ffi::gpointer,
             f: glib::ffi::gpointer,
         ) {
-            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#697">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
-            <a href="#699">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#695">this</a>))
+            <span class="kw">let </span>f: <span class="kw-2">&amp;</span>F = <span class="kw-2">&amp;*</span>(<a href="#692">f</a> <span class="kw">as </span><span class="kw-2">*const </span>F);
+            <a href="#694">f</a>(<span class="kw-2">&amp;</span><a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/translate/fn.from_glib_borrow.html">from_glib_borrow</a>(<a href="#690">this</a>))
         }
         <span class="kw">unsafe </span>{
-            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#693">f</a>);
+            <span class="kw">let </span>f: Box_&lt;F&gt; = <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.new">Box_::new</a>(<a href="#688">f</a>);
             <a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/signal/fn.connect_raw.html">connect_raw</a>(
-                <a class="self" href="#693">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
+                <a class="self" href="#688">self</a>.<a href="https://gtk-rs.org/gtk-rs-core/stable/0.19/docs/glib/object/trait.ObjectType.html#tymethod.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*mut </span><span class="kw">_</span>,
                 <span class="string">b"notify::width\0"</span>.<a href="https://doc.rust-lang.org/nightly/core/foreigntype.slice.html#method.as_ptr">as_ptr</a>() <span class="kw">as </span><span class="kw-2">*const </span><span class="kw">_</span>,
                 <span class="prelude-val">Some</span>(std::mem::transmute::&lt;<span class="kw">_</span>, <span class="kw">unsafe extern </span><span class="string">"C" </span><span class="kw">fn</span>()&gt;(
                     notify_width_trampoline::&lt;F&gt; <span class="kw">as </span><span class="kw-2">*const </span>(),
                 )),
-                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#703">f</a>),
+                <a href="https://doc.rust-lang.org/nightly/alloc/boxed/struct.Box.html#method.into_raw">Box_::into_raw</a>(<a href="#698">f</a>),
             )
         }
     }

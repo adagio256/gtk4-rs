@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/mod.rs`."><title>mod.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.78.0-nightly (7d3702e47 2024-03-06)" data-channel="nightly" data-search-js="search-dd67cee4cfa65049.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-4c98445ec4002617.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-12cf3b4f4f9dc36d.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/auto/mod.rs`."><title>mod.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../../static.files/rustdoc-081576b923113409.css"><meta name="rustdoc-vars" data-root-path="../../../" data-static-root-path="../../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0-nightly (3a36386dc 2024-04-25)" data-channel="nightly" data-search-js="search-bf21c90c8c1d92b1.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../../static.files/storage-e32f0c247825364d.js"></script><script defer src="../../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../../src-files.js"></script><script defer src="../../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../../static.files/noscript-09095024cf37855e.css"></noscript><link rel="alternate icon" type="image/png" href="../../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,9 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><div class="src-sidebar-title">
-            <h2>Files</h2></div></nav><div class="sidebar-resizer"></div>
-    <main><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../../gtk4/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../../gtk4/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Type ‘S’ or ‘/’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../../settings.html" title="settings">Settings</a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
 <a href="#3" id="3">3</a>
 <a href="#4" id="4">4</a>
@@ -1839,6 +1837,9 @@
 <a href="#1764" id="1764">1764</a>
 <a href="#1765" id="1765">1765</a>
 <a href="#1766" id="1766">1766</a>
+<a href="#1767" id="1767">1767</a>
+<a href="#1768" id="1768">1768</a>
+<a href="#1769" id="1769">1769</a>
 </pre></div><pre class="rust"><code><span class="comment">// This file was generated by gir (https://github.com/gtk-rs/gir)
 // from gir-files (https://github.com/gtk-rs/gir-files)
 // DO NOT EDIT
@@ -1904,8 +1905,8 @@
 <span class="attr">#[cfg_attr(feature = <span class="string">"v4_10"</span>, deprecated = <span class="string">"Since 4.10"</span>)]
 </span><span class="kw">pub use </span><a href="app_chooser_widget.rs.html#17-553"><span class="self">self</span>::app_chooser_widget::AppChooserWidget</a>;
 
-<span class="kw">mod </span><a href="application.rs.html#5-1035">application</a>;
-<span class="kw">pub use </span><a href="application.rs.html#13-337"><span class="self">self</span>::application::Application</a>;
+<span class="kw">mod </span><a href="application.rs.html#5-1037">application</a>;
+<span class="kw">pub use </span><a href="application.rs.html#13-339"><span class="self">self</span>::application::Application</a>;
 
 <span class="kw">mod </span><a href="application_window.rs.html#5-1270">application_window</a>;
 <span class="kw">pub use </span><a href="application_window.rs.html#16-584"><span class="self">self</span>::application_window::ApplicationWindow</a>;
@@ -2173,7 +2174,7 @@
 <span class="kw">mod </span><a href="drop_target_async.rs.html#5-591">drop_target_async</a>;
 <span class="kw">pub use </span><a href="drop_target_async.rs.html#13-162"><span class="self">self</span>::drop_target_async::DropTargetAsync</a>;
 
-<span class="kw">mod </span><a href="editable.rs.html#5-1402">editable</a>;
+<span class="kw">mod </span><a href="editable.rs.html#5-1411">editable</a>;
 <span class="kw">pub use </span><a href="editable.rs.html#16-676"><span class="self">self</span>::editable::Editable</a>;
 
 <span class="kw">mod </span><a href="editable_label.rs.html#5-831">editable_label</a>;
@@ -2353,10 +2354,10 @@
 
 <span class="attr">#[cfg(feature = <span class="string">"v4_14"</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_14"</span>)))]
-</span><span class="kw">mod </span><a href="graphics_offload.rs.html#5-823">graphics_offload</a>;
+</span><span class="kw">mod </span><a href="graphics_offload.rs.html#5-905">graphics_offload</a>;
 <span class="attr">#[cfg(feature = <span class="string">"v4_14"</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_14"</span>)))]
-</span><span class="kw">pub use </span><a href="graphics_offload.rs.html#16-364"><span class="self">self</span>::graphics_offload::GraphicsOffload</a>;
+</span><span class="kw">pub use </span><a href="graphics_offload.rs.html#16-368"><span class="self">self</span>::graphics_offload::GraphicsOffload</a>;
 
 <span class="kw">mod </span><a href="grid.rs.html#5-1347">grid</a>;
 <span class="kw">pub use </span><a href="grid.rs.html#16-438"><span class="self">self</span>::grid::Grid</a>;
@@ -2373,7 +2374,7 @@
 <span class="kw">mod </span><a href="header_bar.rs.html#5-999">header_bar</a>;
 <span class="kw">pub use </span><a href="header_bar.rs.html#15-410"><span class="self">self</span>::header_bar::HeaderBar</a>;
 
-<span class="kw">mod </span><a href="im_context.rs.html#4-836">im_context</a>;
+<span class="kw">mod </span><a href="im_context.rs.html#4-859">im_context</a>;
 <span class="kw">pub use </span><a href="im_context.rs.html#14-130"><span class="self">self</span>::im_context::IMContext</a>;
 
 <span class="kw">mod </span><a href="im_context_simple.rs.html#5-128">im_context_simple</a>;
@@ -2643,8 +2644,8 @@
 <span class="kw">mod </span><a href="scrollable.rs.html#5-352">scrollable</a>;
 <span class="kw">pub use </span><a href="scrollable.rs.html#13-82"><span class="self">self</span>::scrollable::Scrollable</a>;
 
-<span class="kw">mod </span><a href="scrollbar.rs.html#5-782">scrollbar</a>;
-<span class="kw">pub use </span><a href="scrollbar.rs.html#16-372"><span class="self">self</span>::scrollbar::Scrollbar</a>;
+<span class="kw">mod </span><a href="scrollbar.rs.html#5-797">scrollbar</a>;
+<span class="kw">pub use </span><a href="scrollbar.rs.html#21-377"><span class="self">self</span>::scrollbar::Scrollbar</a>;
 
 <span class="kw">mod </span><a href="scrolled_window.rs.html#5-2266">scrolled_window</a>;
 <span class="kw">pub use </span><a href="scrolled_window.rs.html#16-681"><span class="self">self</span>::scrolled_window::ScrolledWindow</a>;
@@ -2671,8 +2672,8 @@
 <span class="kw">mod </span><a href="separator.rs.html#5-385">separator</a>;
 <span class="kw">pub use </span><a href="separator.rs.html#11-38"><span class="self">self</span>::separator::Separator</a>;
 
-<span class="kw">mod </span><a href="settings.rs.html#5-3581">settings</a>;
-<span class="kw">pub use </span><a href="settings.rs.html#13-526"><span class="self">self</span>::settings::Settings</a>;
+<span class="kw">mod </span><a href="settings.rs.html#5-3695">settings</a>;
+<span class="kw">pub use </span><a href="settings.rs.html#16-549"><span class="self">self</span>::settings::Settings</a>;
 
 <span class="kw">mod </span><a href="shortcut.rs.html#5-285">shortcut</a>;
 <span class="kw">pub use </span><a href="shortcut.rs.html#13-59"><span class="self">self</span>::shortcut::Shortcut</a>;
@@ -2888,7 +2889,7 @@
 <span class="attr">#[cfg_attr(feature = <span class="string">"v4_10"</span>, deprecated = <span class="string">"Since 4.10"</span>)]
 </span><span class="kw">pub use </span><a href="volume_button.rs.html#22-391"><span class="self">self</span>::volume_button::VolumeButton</a>;
 
-<span class="kw">mod </span><a href="widget.rs.html#4-5315">widget</a>;
+<span class="kw">mod </span><a href="widget.rs.html#4-5324">widget</a>;
 <span class="kw">pub use </span><a href="widget.rs.html#18-853"><span class="self">self</span>::widget::Widget</a>;
 
 <span class="kw">mod </span><a href="widget_paintable.rs.html#5-118">widget_paintable</a>;
@@ -2954,7 +2955,7 @@
 <span class="kw">mod </span><a href="tree_row_reference.rs.html#5-218">tree_row_reference</a>;
 <span class="kw">pub use </span><a href="tree_row_reference.rs.html#8-24"><span class="self">self</span>::tree_row_reference::TreeRowReference</a>;
 
-<span class="kw">mod </span><a href="enums.rs.html#5-12869">enums</a>;
+<span class="kw">mod </span><a href="enums.rs.html#5-12989">enums</a>;
 <span class="attr">#[cfg(feature = <span class="string">"v4_14"</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_14"</span>)))]
 </span><span class="kw">pub use </span><a href="enums.rs.html#13-22"><span class="self">self</span>::enums::AccessibleAnnouncementPriority</a>;
@@ -3005,80 +3006,83 @@
 <span class="attr">#[cfg(feature = <span class="string">"v4_10"</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_10"</span>)))]
 </span><span class="kw">pub use </span><a href="enums.rs.html#5157-5172"><span class="self">self</span>::enums::FontLevel</a>;
+<span class="attr">#[cfg(feature = <span class="string">"v4_16"</span>)]
+#[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_16"</span>)))]
+</span><span class="kw">pub use </span><a href="enums.rs.html#5285-5296"><span class="self">self</span>::enums::FontRendering</a>;
 <span class="attr">#[cfg(feature = <span class="string">"v4_14"</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_14"</span>)))]
-</span><span class="kw">pub use </span><a href="enums.rs.html#5284-5293"><span class="self">self</span>::enums::GraphicsOffloadEnabled</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#5407-5419"><span class="self">self</span>::enums::IconSize</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#5511-5520"><span class="self">self</span>::enums::IconThemeError</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#5634-5655"><span class="self">self</span>::enums::IconViewDropPosition</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#5760-5775"><span class="self">self</span>::enums::ImageType</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#5887-5923"><span class="self">self</span>::enums::InputPurpose</a>;
+</span><span class="kw">pub use </span><a href="enums.rs.html#5404-5413"><span class="self">self</span>::enums::GraphicsOffloadEnabled</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#5527-5539"><span class="self">self</span>::enums::IconSize</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#5631-5640"><span class="self">self</span>::enums::IconThemeError</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#5754-5775"><span class="self">self</span>::enums::IconViewDropPosition</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#5880-5895"><span class="self">self</span>::enums::ImageType</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#6007-6043"><span class="self">self</span>::enums::InputPurpose</a>;
 <span class="attr">#[cfg(feature = <span class="string">"v4_8"</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_8"</span>)))]
-</span><span class="kw">pub use </span><a href="enums.rs.html#6034-6049"><span class="self">self</span>::enums::InscriptionOverflow</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#6159-6174"><span class="self">self</span>::enums::Justification</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#6271-6280"><span class="self">self</span>::enums::LevelBarMode</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#6372-6435"><span class="self">self</span>::enums::License</a>;
+</span><span class="kw">pub use </span><a href="enums.rs.html#6154-6169"><span class="self">self</span>::enums::InscriptionOverflow</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#6279-6294"><span class="self">self</span>::enums::Justification</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#6391-6400"><span class="self">self</span>::enums::LevelBarMode</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#6492-6555"><span class="self">self</span>::enums::License</a>;
 <span class="attr">#[cfg(feature = <span class="string">"v4_12"</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_12"</span>)))]
-</span><span class="kw">pub use </span><a href="enums.rs.html#6563-6581"><span class="self">self</span>::enums::ListTabBehavior</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#6689-6707"><span class="self">self</span>::enums::MessageType</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#6804-6837"><span class="self">self</span>::enums::MovementStep</a>;
+</span><span class="kw">pub use </span><a href="enums.rs.html#6683-6701"><span class="self">self</span>::enums::ListTabBehavior</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#6809-6827"><span class="self">self</span>::enums::MessageType</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#6924-6957"><span class="self">self</span>::enums::MovementStep</a>;
 <span class="attr">#[cfg(feature = <span class="string">"v4_6"</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_6"</span>)))]
-</span><span class="kw">pub use </span><a href="enums.rs.html#6948-6965"><span class="self">self</span>::enums::NaturalWrapMode</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#7073-7082"><span class="self">self</span>::enums::NotebookTab</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#7173-7200"><span class="self">self</span>::enums::NumberUpLayout</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#7307-7319"><span class="self">self</span>::enums::Ordering</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#7413-7422"><span class="self">self</span>::enums::Orientation</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#7516-7527"><span class="self">self</span>::enums::Overflow</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#7619-7628"><span class="self">self</span>::enums::PackType</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#7718-7730"><span class="self">self</span>::enums::PadActionType</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#7822-7837"><span class="self">self</span>::enums::PageOrientation</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#7931-7943"><span class="self">self</span>::enums::PageSet</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#8035-8050"><span class="self">self</span>::enums::PanDirection</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#8145-8165"><span class="self">self</span>::enums::PolicyType</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#8262-8277"><span class="self">self</span>::enums::PositionType</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#8371-8383"><span class="self">self</span>::enums::PrintDuplex</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#8476-8492"><span class="self">self</span>::enums::PrintError</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#8611-8628"><span class="self">self</span>::enums::PrintOperationAction</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#8724-8741"><span class="self">self</span>::enums::PrintOperationResult</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#8835-8850"><span class="self">self</span>::enums::PrintPages</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#8944-8959"><span class="self">self</span>::enums::PrintQuality</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#9054-9090"><span class="self">self</span>::enums::PrintStatus</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#9195-9207"><span class="self">self</span>::enums::PropagationLimit</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#9297-9319"><span class="self">self</span>::enums::PropagationPhase</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#9413-9442"><span class="self">self</span>::enums::RecentManagerError</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#9566-9599"><span class="self">self</span>::enums::RevealerTransitionType</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#9705-9726"><span class="self">self</span>::enums::ScrollStep</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#9824-9875"><span class="self">self</span>::enums::ScrollType</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#9992-10001"><span class="self">self</span>::enums::ScrollablePolicy</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#10091-10114"><span class="self">self</span>::enums::SelectionMode</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#10209-10222"><span class="self">self</span>::enums::SensitivityType</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#10315-10330"><span class="self">self</span>::enums::ShortcutScope</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#10424-10459"><span class="self">self</span>::enums::ShortcutType</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#10570-10585"><span class="self">self</span>::enums::SizeGroupMode</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#10680-10692"><span class="self">self</span>::enums::SizeRequestMode</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#10784-10793"><span class="self">self</span>::enums::SortType</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#10884-10904"><span class="self">self</span>::enums::SorterChange</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#10998-11013"><span class="self">self</span>::enums::SorterOrder</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#11108-11120"><span class="self">self</span>::enums::SpinButtonUpdatePolicy</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#11211-11235"><span class="self">self</span>::enums::SpinType</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#11337-11409"><span class="self">self</span>::enums::StackTransitionType</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#11539-11554"><span class="self">self</span>::enums::StringFilterMatchMode</a>;
+</span><span class="kw">pub use </span><a href="enums.rs.html#7068-7085"><span class="self">self</span>::enums::NaturalWrapMode</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#7193-7202"><span class="self">self</span>::enums::NotebookTab</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#7293-7320"><span class="self">self</span>::enums::NumberUpLayout</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#7427-7439"><span class="self">self</span>::enums::Ordering</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#7533-7542"><span class="self">self</span>::enums::Orientation</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#7636-7647"><span class="self">self</span>::enums::Overflow</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#7739-7748"><span class="self">self</span>::enums::PackType</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#7838-7850"><span class="self">self</span>::enums::PadActionType</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#7942-7957"><span class="self">self</span>::enums::PageOrientation</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#8051-8063"><span class="self">self</span>::enums::PageSet</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#8155-8170"><span class="self">self</span>::enums::PanDirection</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#8265-8285"><span class="self">self</span>::enums::PolicyType</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#8382-8397"><span class="self">self</span>::enums::PositionType</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#8491-8503"><span class="self">self</span>::enums::PrintDuplex</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#8596-8612"><span class="self">self</span>::enums::PrintError</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#8731-8748"><span class="self">self</span>::enums::PrintOperationAction</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#8844-8861"><span class="self">self</span>::enums::PrintOperationResult</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#8955-8970"><span class="self">self</span>::enums::PrintPages</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#9064-9079"><span class="self">self</span>::enums::PrintQuality</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#9174-9210"><span class="self">self</span>::enums::PrintStatus</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#9315-9327"><span class="self">self</span>::enums::PropagationLimit</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#9417-9439"><span class="self">self</span>::enums::PropagationPhase</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#9533-9562"><span class="self">self</span>::enums::RecentManagerError</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#9686-9719"><span class="self">self</span>::enums::RevealerTransitionType</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#9825-9846"><span class="self">self</span>::enums::ScrollStep</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#9944-9995"><span class="self">self</span>::enums::ScrollType</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#10112-10121"><span class="self">self</span>::enums::ScrollablePolicy</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#10211-10234"><span class="self">self</span>::enums::SelectionMode</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#10329-10342"><span class="self">self</span>::enums::SensitivityType</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#10435-10450"><span class="self">self</span>::enums::ShortcutScope</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#10544-10579"><span class="self">self</span>::enums::ShortcutType</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#10690-10705"><span class="self">self</span>::enums::SizeGroupMode</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#10800-10812"><span class="self">self</span>::enums::SizeRequestMode</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#10904-10913"><span class="self">self</span>::enums::SortType</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#11004-11024"><span class="self">self</span>::enums::SorterChange</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#11118-11133"><span class="self">self</span>::enums::SorterOrder</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#11228-11240"><span class="self">self</span>::enums::SpinButtonUpdatePolicy</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#11331-11355"><span class="self">self</span>::enums::SpinType</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#11457-11529"><span class="self">self</span>::enums::StackTransitionType</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#11659-11674"><span class="self">self</span>::enums::StringFilterMatchMode</a>;
 <span class="attr">#[cfg(feature = <span class="string">"v4_6"</span>)]
 #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_6"</span>)))]
-</span><span class="kw">pub use </span><a href="enums.rs.html#11651-11666"><span class="self">self</span>::enums::SymbolicColor</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#11784-11809"><span class="self">self</span>::enums::SystemSetting</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#11905-11917"><span class="self">self</span>::enums::TextDirection</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#12010-12021"><span class="self">self</span>::enums::TextExtendSelection</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#12112-12121"><span class="self">self</span>::enums::TextViewLayer</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#12211-12232"><span class="self">self</span>::enums::TextWindowType</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#12332-12344"><span class="self">self</span>::enums::TreeViewColumnSizing</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#12436-12451"><span class="self">self</span>::enums::TreeViewDropPosition</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#12545-12560"><span class="self">self</span>::enums::TreeViewGridLines</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#12654-12669"><span class="self">self</span>::enums::Unit</a>;
-<span class="kw">pub use </span><a href="enums.rs.html#12763-12781"><span class="self">self</span>::enums::WrapMode</a>;
+</span><span class="kw">pub use </span><a href="enums.rs.html#11771-11786"><span class="self">self</span>::enums::SymbolicColor</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#11904-11929"><span class="self">self</span>::enums::SystemSetting</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#12025-12037"><span class="self">self</span>::enums::TextDirection</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#12130-12141"><span class="self">self</span>::enums::TextExtendSelection</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#12232-12241"><span class="self">self</span>::enums::TextViewLayer</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#12331-12352"><span class="self">self</span>::enums::TextWindowType</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#12452-12464"><span class="self">self</span>::enums::TreeViewColumnSizing</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#12556-12571"><span class="self">self</span>::enums::TreeViewDropPosition</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#12665-12680"><span class="self">self</span>::enums::TreeViewGridLines</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#12774-12789"><span class="self">self</span>::enums::Unit</a>;
+<span class="kw">pub use </span><a href="enums.rs.html#12883-12901"><span class="self">self</span>::enums::WrapMode</a>;
 
 <span class="kw">mod </span><a href="flags.rs.html#5-1937">flags</a>;
 <span class="kw">pub use </span><a href="flags.rs.html#7-30"><span class="self">self</span>::flags::ApplicationInhibitFlags</a>;
@@ -3270,7 +3274,7 @@
     <span class="kw">pub use </span><a href="adjustment.rs.html#239-674"><span class="kw">super</span>::adjustment::AdjustmentExt</a>;
     <span class="attr">#[cfg_attr(feature = <span class="string">"v4_10"</span>, deprecated = <span class="string">"Since 4.10"</span>)]
     </span><span class="kw">pub use </span><a href="app_chooser.rs.html#355-413"><span class="kw">super</span>::app_chooser::AppChooserExt</a>;
-    <span class="kw">pub use </span><a href="application.rs.html#458-1033"><span class="kw">super</span>::application::GtkApplicationExt</a>;
+    <span class="kw">pub use </span><a href="application.rs.html#460-1035"><span class="kw">super</span>::application::GtkApplicationExt</a>;
     <span class="kw">pub use </span><a href="application_window.rs.html#1162-1268"><span class="kw">super</span>::application_window::ApplicationWindowExt</a>;
     <span class="kw">pub use </span><a href="box_.rs.html#777-1061"><span class="kw">super</span>::box_::BoxExt</a>;
     <span class="kw">pub use </span><a href="buildable.rs.html#47-65"><span class="kw">super</span>::buildable::BuildableExt</a>;
@@ -3297,7 +3301,7 @@
     <span class="attr">#[cfg_attr(feature = <span class="string">"v4_10"</span>, deprecated = <span class="string">"Since 4.10"</span>)]
     </span><span class="kw">pub use </span><a href="dialog.rs.html#1446-1750"><span class="kw">super</span>::dialog::DialogExt</a>;
     <span class="kw">pub use </span><a href="drawing_area.rs.html#913-1061"><span class="kw">super</span>::drawing_area::DrawingAreaExt</a>;
-    <span class="kw">pub use </span><a href="editable.rs.html#692-1400"><span class="kw">super</span>::editable::EditableExt</a>;
+    <span class="kw">pub use </span><a href="editable.rs.html#692-1409"><span class="kw">super</span>::editable::EditableExt</a>;
     <span class="kw">pub use </span><a href="entry.rs.html#1778-4248"><span class="kw">super</span>::entry::EntryExt</a>;
     <span class="kw">pub use </span><a href="entry_buffer.rs.html#132-239"><span class="kw">super</span>::entry_buffer::EntryBufferExt</a>;
     <span class="kw">pub use </span><a href="event_controller.rs.html#80-382"><span class="kw">super</span>::event_controller::EventControllerExt</a>;
@@ -3314,7 +3318,7 @@
     <span class="kw">pub use </span><a href="gesture_single.rs.html#111-312"><span class="kw">super</span>::gesture_single::GestureSingleExt</a>;
     <span class="kw">pub use </span><a href="gl_area.rs.html#1066-1682"><span class="kw">super</span>::gl_area::GLAreaExt</a>;
     <span class="kw">pub use </span><a href="grid.rs.html#832-1345"><span class="kw">super</span>::grid::GridExt</a>;
-    <span class="kw">pub use </span><a href="im_context.rs.html#146-834"><span class="kw">super</span>::im_context::IMContextExt</a>;
+    <span class="kw">pub use </span><a href="im_context.rs.html#146-857"><span class="kw">super</span>::im_context::IMContextExt</a>;
     <span class="kw">pub use </span><a href="im_multicontext.rs.html#108-143"><span class="kw">super</span>::im_multicontext::IMMulticontextExt</a>;
     <span class="kw">pub use </span><a href="layout_child.rs.html#60-91"><span class="kw">super</span>::layout_child::LayoutChildExt</a>;
     <span class="kw">pub use </span><a href="layout_manager.rs.html#87-243"><span class="kw">super</span>::layout_manager::LayoutManagerExt</a>;
@@ -3371,7 +3375,7 @@
     </span><span class="kw">pub use </span><a href="tree_sortable.rs.html#108-170"><span class="kw">super</span>::tree_sortable::TreeSortableExt</a>;
     <span class="attr">#[cfg_attr(feature = <span class="string">"v4_10"</span>, deprecated = <span class="string">"Since 4.10"</span>)]
     </span><span class="kw">pub use </span><a href="tree_view.rs.html#1319-4879"><span class="kw">super</span>::tree_view::TreeViewExt</a>;
-    <span class="kw">pub use </span><a href="widget.rs.html#903-5313"><span class="kw">super</span>::widget::WidgetExt</a>;
+    <span class="kw">pub use </span><a href="widget.rs.html#903-5322"><span class="kw">super</span>::widget::WidgetExt</a>;
     <span class="kw">pub use </span><a href="window.rs.html#1404-3210"><span class="kw">super</span>::window::GtkWindowExt</a>;
     <span class="kw">pub use </span><a href="window_group.rs.html#71-112"><span class="kw">super</span>::window_group::WindowGroupExt</a>;
 }
@@ -3387,7 +3391,7 @@
     </span><span class="kw">pub use </span><a href="app_chooser_button.rs.html#1021-1023"><span class="kw">super</span>::app_chooser_button::AppChooserButtonBuilder</a>;
     <span class="attr">#[cfg_attr(feature = <span class="string">"v4_10"</span>, deprecated = <span class="string">"Since 4.10"</span>)]
     </span><span class="kw">pub use </span><a href="app_chooser_widget.rs.html#1053-1055"><span class="kw">super</span>::app_chooser_widget::AppChooserWidgetBuilder</a>;
-    <span class="kw">pub use </span><a href="application.rs.html#356-358"><span class="kw">super</span>::application::ApplicationBuilder</a>;
+    <span class="kw">pub use </span><a href="application.rs.html#358-360"><span class="kw">super</span>::application::ApplicationBuilder</a>;
     <span class="kw">pub use </span><a href="application_window.rs.html#627-629"><span class="kw">super</span>::application_window::ApplicationWindowBuilder</a>;
     <span class="kw">pub use </span><a href="aspect_frame.rs.html#646-648"><span class="kw">super</span>::aspect_frame::AspectFrameBuilder</a>;
     <span class="attr">#[cfg_attr(feature = <span class="string">"v4_10"</span>, deprecated = <span class="string">"Since 4.10"</span>)]
@@ -3502,7 +3506,7 @@
     <span class="kw">pub use </span><a href="gl_area.rs.html#695-697"><span class="kw">super</span>::gl_area::GLAreaBuilder</a>;
     <span class="attr">#[cfg(feature = <span class="string">"v4_14"</span>)]
     #[cfg_attr(docsrs, doc(cfg(feature = <span class="string">"v4_14"</span>)))]
-    </span><span class="kw">pub use </span><a href="graphics_offload.rs.html#503-505"><span class="kw">super</span>::graphics_offload::GraphicsOffloadBuilder</a>;
+    </span><span class="kw">pub use </span><a href="graphics_offload.rs.html#579-581"><span class="kw">super</span>::graphics_offload::GraphicsOffloadBuilder</a>;
     <span class="kw">pub use </span><a href="grid.rs.html#474-476"><span class="kw">super</span>::grid::GridBuilder</a>;
     <span class="kw">pub use </span><a href="grid_layout.rs.html#386-388"><span class="kw">super</span>::grid_layout::GridLayoutBuilder</a>;
     <span class="kw">pub use </span><a href="grid_view.rs.html#1058-1060"><span class="kw">super</span>::grid_view::GridViewBuilder</a>;
@@ -3558,12 +3562,12 @@
     <span class="kw">pub use </span><a href="revealer.rs.html#633-635"><span class="kw">super</span>::revealer::RevealerBuilder</a>;
     <span class="kw">pub use </span><a href="scale.rs.html#571-573"><span class="kw">super</span>::scale::ScaleBuilder</a>;
     <span class="kw">pub use </span><a href="scale_button.rs.html#617-619"><span class="kw">super</span>::scale_button::ScaleButtonBuilder</a>;
-    <span class="kw">pub use </span><a href="scrollbar.rs.html#464-466"><span class="kw">super</span>::scrollbar::ScrollbarBuilder</a>;
+    <span class="kw">pub use </span><a href="scrollbar.rs.html#479-481"><span class="kw">super</span>::scrollbar::ScrollbarBuilder</a>;
     <span class="kw">pub use </span><a href="scrolled_window.rs.html#1810-1812"><span class="kw">super</span>::scrolled_window::ScrolledWindowBuilder</a>;
     <span class="kw">pub use </span><a href="search_bar.rs.html#653-655"><span class="kw">super</span>::search_bar::SearchBarBuilder</a>;
     <span class="kw">pub use </span><a href="search_entry.rs.html#1174-1176"><span class="kw">super</span>::search_entry::SearchEntryBuilder</a>;
     <span class="kw">pub use </span><a href="separator.rs.html#76-78"><span class="kw">super</span>::separator::SeparatorBuilder</a>;
-    <span class="kw">pub use </span><a href="settings.rs.html#2927-2929"><span class="kw">super</span>::settings::SettingsBuilder</a>;
+    <span class="kw">pub use </span><a href="settings.rs.html#3018-3020"><span class="kw">super</span>::settings::SettingsBuilder</a>;
     <span class="kw">pub use </span><a href="shortcut.rs.html#247-249"><span class="kw">super</span>::shortcut::ShortcutBuilder</a>;
     <span class="kw">pub use </span><a href="shortcut_label.rs.html#475-477"><span class="kw">super</span>::shortcut_label::ShortcutLabelBuilder</a>;
     <span class="kw">pub use </span><a href="shortcuts_group.rs.html#615-617"><span class="kw">super</span>::shortcuts_group::ShortcutsGroupBuilder</a>;
@@ -3582,7 +3586,7 @@
     </span><span class="kw">pub use </span><a href="statusbar.rs.html#431-433"><span class="kw">super</span>::statusbar::StatusbarBuilder</a>;
     <span class="kw">pub use </span><a href="string_filter.rs.html#296-298"><span class="kw">super</span>::string_filter::StringFilterBuilder</a>;
     <span class="kw">pub use </span><a href="string_sorter.rs.html#254-256"><span class="kw">super</span>::string_sorter::StringSorterBuilder</a>;
-    <span class="kw">pub use </span><a href="switch.rs.html#740-742"><span class="kw">super</span>::switch::SwitchBuilder</a>;
+    <span class="kw">pub use </span><a href="switch.rs.html#736-738"><span class="kw">super</span>::switch::SwitchBuilder</a>;
     <span class="kw">pub use </span><a href="text.rs.html#1881-1883"><span class="kw">super</span>::text::TextBuilder</a>;
     <span class="kw">pub use </span><a href="text_buffer.rs.html#305-307"><span class="kw">super</span>::text_buffer::TextBufferBuilder</a>;
     <span class="kw">pub use </span><a href="text_mark.rs.html#125-127"><span class="kw">super</span>::text_mark::TextMarkBuilder</a>;

@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/lib.rs`."><title>lib.rs - source</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-e935ef01ae1c1829.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.78.0-nightly (7d3702e47 2024-03-06)" data-channel="nightly" data-search-js="search-dd67cee4cfa65049.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-4c98445ec4002617.js"></script><script defer src="../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-12cf3b4f4f9dc36d.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-04d5337699b92874.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-16x16-8b506e7a72182f1c.png"><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Source of the Rust file `gtk4/src/lib.rs`."><title>lib.rs - source</title><script>if(window.location.protocol!=="file:")document.head.insertAdjacentHTML("beforeend","SourceSerif4-Regular-46f98efaafac5295.ttf.woff2,FiraSans-Regular-018c141bf0843ffd.woff2,FiraSans-Medium-8f9a781e4970d388.woff2,SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2,SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2".split(",").map(f=>`<link rel="preload" as="font" type="font/woff2" crossorigin href="../../static.files/${f}">`).join(""))</script><link rel="stylesheet" href="../../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../../static.files/rustdoc-081576b923113409.css"><meta name="rustdoc-vars" data-root-path="../../" data-static-root-path="../../static.files/" data-current-crate="gtk4" data-themes="" data-resource-suffix="" data-rustdoc-version="1.79.0-nightly (3a36386dc 2024-04-25)" data-channel="nightly" data-search-js="search-bf21c90c8c1d92b1.js" data-settings-js="settings-4313503d2e1961c2.js" ><script src="../../static.files/storage-e32f0c247825364d.js"></script><script defer src="../../static.files/src-script-e66d777a5a92e9b2.js"></script><script defer src="../../src-files.js"></script><script defer src="../../static.files/main-20a3ad099b048cf2.js"></script><noscript><link rel="stylesheet" href="../../static.files/noscript-09095024cf37855e.css"></noscript><link rel="alternate icon" type="image/png" href="../../static.files/favicon-32x32-422f7d1d52889060.png"><link rel="icon" type="image/svg+xml" href="../../static.files/favicon-2c020d218678b618.svg"></head><body class="rustdoc src"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]-->
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", checkDocsLatestStable);
 
@@ -71,9 +71,7 @@
 </script>
 
 
-<nav class="sidebar"><div class="src-sidebar-title">
-            <h2>Files</h2></div></nav><div class="sidebar-resizer"></div>
-    <main><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../gtk4/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
+<nav class="sidebar"><div class="src-sidebar-title"><h2>Files</h2></div></nav><div class="sidebar-resizer"></div><main><nav class="sub"><form class="search-form"><span></span><div id="sidebar-button" tabindex="-1"><a href="../../gtk4/all.html" title="show sidebar"></a></div><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Type ‘S’ or ‘/’ to search, ‘?’ for more options…" type="search"><div id="help-button" tabindex="-1"><a href="../../help.html" title="help">?</a></div><div id="settings-menu" tabindex="-1"><a href="../../settings.html" title="settings">Settings</a></div></form></nav><section id="main-content" class="content"><div class="example-wrap"><div data-nosnippet><pre class="src-line-numbers"><a href="#1" id="1">1</a>
 <a href="#2" id="2">2</a>
 <a href="#3" id="3">3</a>
 <a href="#4" id="4">4</a>
@@ -456,7 +454,7 @@
 <span class="attr">#[allow(clippy::derived_hash_with_manual_eq)]
 #[allow(clippy::too_many_arguments)]
 #[allow(clippy::type_complexity)]
-</span><span class="kw">mod </span><a href="auto/mod.rs.html#5-1766">auto</a>;
+</span><span class="kw">mod </span><a href="auto/mod.rs.html#5-1769">auto</a>;
 
 <span class="attr">#[macro_use]
 </span><span class="kw">pub mod </span><a href="subclass/mod.rs.html#4-174">subclass</a>;
@@ -498,13 +496,13 @@
 <span class="kw">mod </span><a href="drop_target.rs.html#3-118">drop_target</a>;
 <span class="kw">mod </span><a href="editable.rs.html#3-77">editable</a>;
 <span class="kw">mod </span><a href="editable_label.rs.html#3-35">editable_label</a>;
-<span class="kw">mod </span><a href="entry.rs.html#3-35">entry</a>;
+<span class="kw">mod </span><a href="entry.rs.html#3-33">entry</a>;
 <span class="kw">mod </span><a href="entry_buffer.rs.html#3-150">entry_buffer</a>;
 <span class="kw">mod </span><a href="entry_completion.rs.html#3-33">entry_completion</a>;
 <span class="kw">mod </span><a href="enums.rs.html#3-228">enums</a>;
 <span class="kw">mod </span><a href="event_controller_key.rs.html#3-101">event_controller_key</a>;
 <span class="kw">mod </span><a href="expression_watch.rs.html#3-77">expression_watch</a>;
-<span class="kw">mod </span><a href="file_chooser.rs.html#3-110">file_chooser</a>;
+<span class="kw">mod </span><a href="file_chooser.rs.html#3-109">file_chooser</a>;
 <span class="kw">mod </span><a href="file_chooser_dialog.rs.html#3-60">file_chooser_dialog</a>;
 <span class="kw">mod </span><a href="flow_box.rs.html#3-91">flow_box</a>;
 <span class="kw">mod </span><a href="font_chooser.rs.html#3-32">font_chooser</a>;
@@ -523,7 +521,7 @@
 <span class="kw">mod </span><a href="map_list_model.rs.html#3-33">map_list_model</a>;
 <span class="kw">mod </span><a href="media_stream.rs.html#3-40">media_stream</a>;
 <span class="kw">mod </span><a href="menu_button.rs.html#3-20">menu_button</a>;
-<span class="kw">mod </span><a href="message_dialog.rs.html#3-201">message_dialog</a>;
+<span class="kw">mod </span><a href="message_dialog.rs.html#3-200">message_dialog</a>;
 <span class="kw">mod </span><a href="mnemonic_trigger.rs.html#3-68">mnemonic_trigger</a>;
 <span class="kw">mod </span><a href="native_dialog.rs.html#3-97">native_dialog</a>;
 <span class="kw">mod </span><a href="notebook.rs.html#3-347">notebook</a>;
@@ -540,7 +538,7 @@
 <span class="kw">mod </span><a href="property_expression.rs.html#3-34">property_expression</a>;
 <span class="kw">mod </span><a href="recent_data.rs.html#3-115">recent_data</a>;
 <span class="kw">mod </span><a href="requisition.rs.html#3-26">requisition</a>;
-<span class="kw">mod </span><a href="response_type.rs.html#3-201">response_type</a>;
+<span class="kw">mod </span><a href="response_type.rs.html#3-197">response_type</a>;
 <span class="kw">mod </span><a href="scale.rs.html#3-29">scale</a>;
 <span class="kw">mod </span><a href="shortcut.rs.html#3-32">shortcut</a>;
 <span class="kw">mod </span><a href="shortcut_trigger.rs.html#3-51">shortcut_trigger</a>;
@@ -548,7 +546,7 @@
 <span class="kw">mod </span><a href="signal_list_item_factory.rs.html#3-118">signal_list_item_factory</a>;
 <span class="kw">mod </span><a href="snapshot.rs.html#3-86">snapshot</a>;
 <span class="kw">mod </span><a href="spin_button.rs.html#3-58">spin_button</a>;
-<span class="kw">mod </span><a href="string_list.rs.html#3-76">string_list</a>;
+<span class="kw">mod </span><a href="string_list.rs.html#3-74">string_list</a>;
 <span class="kw">mod </span><a href="string_object.rs.html#3-98">string_object</a>;
 <span class="kw">mod </span><a href="style_context.rs.html#3-63">style_context</a>;
 <span class="kw">mod </span><a href="text.rs.html#3-410">text</a>;
@@ -577,7 +575,7 @@
 <span class="kw">pub use </span><a href="pad_action_entry.rs.html#9-19">pad_action_entry::PadActionEntry</a>;
 <span class="kw">pub use </span><a href="page_range.rs.html#7-13">page_range::PageRange</a>;
 <span class="kw">pub use </span><a href="recent_data.rs.html#7-18">recent_data::RecentData</a>;
-<span class="kw">pub use </span><a href="response_type.rs.html#18-56">response_type::ResponseType</a>;
+<span class="kw">pub use </span><a href="response_type.rs.html#14-52">response_type::ResponseType</a>;
 <span class="kw">pub use </span><a href="subclass/widget.rs.html#1626-1631">subclass::widget::TemplateChild</a>;
 <span class="kw">pub use </span><a href="tree_sortable.rs.html#12-16">tree_sortable::SortColumn</a>;
 <span class="kw">pub use </span><a href="widget.rs.html#96-99">widget::TickCallbackId</a>;
